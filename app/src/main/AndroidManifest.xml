@@ -15,6 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".FastFood"
+            android:label="FastFood"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <activity android:name=".Produits"
+            android:label="produit"
+            android:parentActivityName=".FastFood">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".FastFood" />
+        </activity>
     </application>
 
 </manifest>
