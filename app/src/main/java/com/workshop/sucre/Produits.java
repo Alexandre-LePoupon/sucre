@@ -1,12 +1,8 @@
 package com.workshop.sucre;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
@@ -25,7 +21,7 @@ public class Produits extends AppCompatActivity{
 
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_produits);
 
         txt_help_gest = (TextView) findViewById(R.id.txt_help_gest);
         imgbutton1 = (ImageButton) findViewById(R.id.imageButton17);
