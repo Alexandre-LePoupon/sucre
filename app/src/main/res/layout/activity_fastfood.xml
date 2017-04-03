@@ -8,74 +8,56 @@
 
 
     <GridLayout
-        android:layout_width="264dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="20dp"
-        android:layout_weight="2.03"
         android:visibility="visible">
 
         <ImageButton
             android:id="@+id/imageButton8"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
             android:layout_column="1"
-            android:layout_marginBottom="25dp"
             android:layout_row="1"
-            app:srcCompat="@mipmap/vf" />
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="27dp"
-            android:layout_height="28dp"
-            android:layout_marginLeft="-75dp"
-            android:layout_marginTop="130dp"
-            android:layout_weight="0.89"
-            android:text="Vf" />
+            android:padding="0dp"
+            app:srcCompat="@drawable/fast_food_burger_king" />
 
         <ImageButton
             android:id="@+id/imageButton6"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
             android:layout_column="2"
             android:layout_row="1"
-            app:srcCompat="@mipmap/quick" />
-
+            android:layout_marginBottom="25dp"
+            android:padding="0dp"
+            app:srcCompat="@drawable/fast_food_quick" />
 
         <ImageButton
             android:id="@+id/imageButton9"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
             android:layout_column="1"
             android:layout_row="2"
-            app:srcCompat="@mipmap/burgerk" />
-
-        <ImageButton
-            android:id="@+id/imageButton7"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_column="2"
-            android:layout_marginBottom="25dp"
-            android:layout_row="0"
-            app:srcCompat="@mipmap/kfc" />
+            android:padding="0dp"
+            app:srcCompat="@drawable/fast_food_speed_burger" />
 
         <ImageButton
             android:id="@+id/imageButton5"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
             android:layout_column="1"
             android:layout_row="0"
             android:onClick="produits"
-            app:srcCompat="@mipmap/macdo" />
+            android:padding="0dp"
+            app:srcCompat="@drawable/fast_food_mcdo" />
 
         <ImageButton
             android:id="@+id/imageButton10"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
             android:layout_column="2"
             android:layout_row="2"
-            app:srcCompat="@mipmap/speedburger" />
+            android:padding="0dp"
+            app:srcCompat="@drawable/fast_food_vf" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_column="2"
+            android:layout_marginBottom="25dp"
+            android:layout_row="0"
+            android:padding="0dp"
+            app:srcCompat="@drawable/fast_food_kfc" />
 
     </GridLayout>
 

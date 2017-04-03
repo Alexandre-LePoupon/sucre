@@ -17,18 +17,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
-        lentText = (EditText) findViewById(R.id.editText);
-        rapideText = (EditText) findViewById(R.id.editText2);
+        //lentText = (EditText) findViewById(R.id.editText);
+        //rapideText = (EditText) findViewById(R.id.editText2);
         //Protocole protocole = protocoleDAO.selectionner(1);
         //lentText.setText((int) protocole.getLent());
         //rapideText.setText((int) protocole.getRapide());
     }
     public void accueil (View view){
 
-        float lent = lent = Float.parseFloat(lentText.getText().toString());
-        float rapide = rapide = Float.parseFloat(rapideText.getText().toString());
-        Protocole protocole = new Protocole(1,lent,rapide);
-        this.modifProtocole(protocole);
+        //float lent = lent = Float.parseFloat(lentText.getText().toString());
+        //float rapide = rapide = Float.parseFloat(rapideText.getText().toString());
+        //Protocole protocole = new Protocole(1,lent,rapide);
+        //this.modifProtocole(protocole);
         startActivity(new Intent(this, FastFood.class));
     }
 
