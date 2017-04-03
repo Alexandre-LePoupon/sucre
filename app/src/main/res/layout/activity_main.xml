@@ -22,21 +22,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/mcdo_menu"
+                    app:srcCompat="@drawable/en_ce_moment"
                     android:id="@+id/imageButton" />
 
                 <ImageButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/mcdo_salade"
-                    android:id="@+id/imageButton2"
-                    android:layout_weight="1" />
+                    app:srcCompat="@drawable/nos_menus"
+                    android:id="@+id/imageButton2" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/nos_sandwichs"
+                    android:id="@+id/imageButton1" />
 
             </LinearLayout>
         </HorizontalScrollView>
