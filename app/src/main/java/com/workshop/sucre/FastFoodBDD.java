@@ -6,9 +6,9 @@ package com.workshop.sucre;
 
 public class FastFoodBDD {
     private long id;
-    private char nom;
+    private String nom;
 
-    public FastFoodBDD(long id, char nom){
+    public FastFoodBDD(long id, String nom){
         this.id = id;
         this.nom = nom;
     }
@@ -21,11 +21,11 @@ public class FastFoodBDD {
         this.id = id;
     }
 
-    public char getNom() {
+    public String getNom() {
         return nom;
     }
 
-    public void setNom(char nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 }

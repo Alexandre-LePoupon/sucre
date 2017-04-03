@@ -46,8 +46,8 @@ public class MenuDAO extends DAOBase{
 
 
     public Menu selectionner(long id) {
-        char nom=0;
-        char taille=0;
+        String nom = null;
+        String taille = null;
         Cursor c = mDb.rawQuery("select " + NOM + "," + TAILLE + " from " + TABLE_NAME + " where id = ?", new String[] {String.valueOf(id)});
         c.close();
         Menu p = new Menu(id, nom, taille);
