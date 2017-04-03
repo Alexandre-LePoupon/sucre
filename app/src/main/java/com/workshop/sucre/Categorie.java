@@ -6,10 +6,10 @@ package com.workshop.sucre;
 
 public class Categorie {
     private long id;
-    private char nom;
-    private char type;
+    private String nom;
+    private String type;
 
-    public Categorie(long id, char nom, char type) {
+    public Categorie(long id, String nom, String type) {
         this.id = id;
         this.nom = nom;
         this.type = type;
@@ -23,19 +23,19 @@ public class Categorie {
         this.id = id;
     }
 
-    public char getNom() {
+    public String getNom() {
         return nom;
     }
 
-    public void setNom(char nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public char getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(char type) {
+    public void setType(String type) {
         this.type = type;
     }
 }

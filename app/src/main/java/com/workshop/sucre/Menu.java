@@ -6,10 +6,10 @@ package com.workshop.sucre;
 
 public class Menu {
     private long id;
-    private char nom;
-    private char taille;
+    private String nom;
+    private String taille;
 
-    public Menu (long id, char nom, char taille){
+    public Menu (long id, String nom, String taille){
         this.id = id;
         this.nom = nom;
         this.taille = taille;
@@ -23,19 +23,19 @@ public class Menu {
         this.id = id;
     }
 
-    public long getNom() {
+    public String getNom() {
         return nom;
     }
 
-    public void setNom(char nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public long getTaille() {
+    public String getTaille() {
         return taille;
     }
 
-    public void setTaille(char taille) {
+    public void setTaille(String taille) {
         this.taille = taille;
     }
 }

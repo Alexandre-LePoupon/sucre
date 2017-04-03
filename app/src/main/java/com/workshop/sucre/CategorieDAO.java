@@ -27,8 +27,8 @@ public class CategorieDAO extends DAOBase{
 
     public void ajouter(Categorie p) {
         ContentValues value = new ContentValues();
-        value.put(CategorieDAO.NOM, (int) p.getNom());
-        value.put(CategorieDAO.TYPE, (int) p.getType());
+        value.put(CategorieDAO.NOM, p.getNom());
+        value.put(CategorieDAO.TYPE, p.getType());
         mDb.insert(ProtocoleDAO.TABLE_NAME, null, value);
     }
 
@@ -38,15 +38,15 @@ public class CategorieDAO extends DAOBase{
 
     public void modifier(Categorie p) {
         ContentValues value = new ContentValues();
-        value.put(NOM, (int) p.getNom());
-        value.put(TYPE, (int) p.getType());
+        value.put(NOM, p.getNom());
+        value.put(TYPE, p.getType());
         mDb.update(TABLE_NAME, value, KEY + " = ?", new String[] {String.valueOf(p.getId())});
     }
 
 
     public Categorie selectionner(long id) {
-        char nom=0;
-        char type=0;
+        String nom = null;
+        String type = null;
         Cursor c = mDb.rawQuery("select " + NOM + "," + TYPE + " from " + TABLE_NAME + " where id = ?", new String[] {String.valueOf(id)});
         c.close();
         Categorie p = new Categorie(id, nom, type);

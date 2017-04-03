@@ -25,7 +25,7 @@ public class FastFoodDAO extends DAOBase{
 
     public void ajouter(FastFoodBDD p) {
         ContentValues value = new ContentValues();
-        value.put (FastFoodDAO.NOM, (int) p.getNom());
+        value.put (FastFoodDAO.NOM, p.getNom());
         mDb.insert(ProtocoleDAO.TABLE_NAME, null, value);
     }
 
@@ -35,14 +35,13 @@ public class FastFoodDAO extends DAOBase{
 
     public void modifier(FastFoodBDD p) {
         ContentValues value = new ContentValues();
-        value.put(NOM, (int) p.getNom());
+        value.put(NOM, p.getNom());
         mDb.update(TABLE_NAME, value, KEY + " = ?", new String[] {String.valueOf(p.getId())});
     }
 
 
     public FastFoodBDD selectionner(long id) {
-        char nom=0;
-        char taille=0;
+        String nom = null;
         Cursor c = mDb.rawQuery("select " + NOM + "," + " from " + TABLE_NAME + " where id = ?", new String[] {String.valueOf(id)});
         c.close();
         FastFoodBDD p = new FastFoodBDD(id, nom);
