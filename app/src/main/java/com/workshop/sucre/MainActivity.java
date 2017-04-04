@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         //float rapide = rapide = Float.parseFloat(rapideText.getText().toString());
         //Protocole protocole = new Protocole(1,lent,rapide);
         //this.modifProtocole(protocole);
+
+        // input names inputSucresLents / inputSucresRapides
         startActivity(new Intent(this, FastFood.class));
     }
 

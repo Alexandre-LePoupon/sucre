@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,71 +10,128 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.workshop.sucre.MainActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:text="Bienvenue sur l'application Sucre" />
 
-        <TextView
-            android:layout_marginTop="20dp"
-            android:text="Veuillez renseigner votre grammage :"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:id="@+id/textView2" />
-
-        <GridLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:text="Glucides lents :"
-                android:layout_width="wrap_content"
+                android:text="Bienvenu sur l'application"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/editText" />
+                android:id="@+id/messageBienvenu"
+                android:textAlignment="center"
+                tools:text="Bienvenu sur l'application"
+                android:textColor="#000" />
 
             <TextView
-                android:text="Glucides rapides :"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4" />
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="false"
+                android:id="@+id/titre"
+                android:text="FRIT'LY"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="34sp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center"
+                android:textColor="#000" />
 
-            <EditText
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:ems="10"
-                android:id="@+id/editText2" />
+                tools:background="#AAA"
+                tools:padding="5dp"
+                tools:layout_marginTop="10dp">
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="2"
-                android:text="Valider"
-                android:onClick="accueil" />
-        </GridLayout>
+                <TextView
+                    android:text="Choisissez votre protocole :"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/messageChoixProtocol"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    tools:paddingBottom="10dp"
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp" />
 
-    </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="5dp">
 
-</RelativeLayout>
+                    <TextView
+                        android:text="Votre quantité de sucres lents voulus :"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/surcresLentes"
+                        android:fontFamily="sans-serif"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        tools:paddingBottom="5dp"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/inputSucresLents"
+                        android:background="#DDF"
+                        android:textColor="#000"
+                        android:layout_width="130dp"
+                        android:textAlignment="center"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:text="Votre quantité de sucres rapides voulus :"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sucresRapide"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:layout_weight="1" />
+
+                    <EditText
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:id="@+id/inputSucresRapides"
+                        android:textColor="#000"
+                        android:background="#DDF"
+                        android:textAlignment="center"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="accueil"
+                    android:text="Valider" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
