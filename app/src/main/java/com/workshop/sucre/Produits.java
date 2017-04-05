@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
@@ -133,5 +134,18 @@ public class Produits extends AppCompatActivity{
         sucresLents.setText(valueActuelL+" / "+protocolDAO.selectionner(1).getLent()+"g");
         sucresRapides.setText(valueActuelR+" / "+protocolDAO.selectionner(1).getRapide()+"g");
     }
-
+    private void addSucresRapides(float value)
+    {
+        valueActuelR+=value;
+    }
+    private void addSucresLents(float value)
+    {
+        valueActuelL+=value;
+    }
+    public void changeSucres(float rapide,float lent)
+    {
+        addSucresLents(lent);
+        addSucresRapides(rapide);
+        setSucresValues();
+    }
 }
