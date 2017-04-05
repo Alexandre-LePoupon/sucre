@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
@@ -54,10 +55,31 @@ public class Produits extends AppCompatActivity{
             Produit bigMac = new Produit(1, "BigMac", 1, 42, (float) 8.5, "mcdo_big_mac",0);
             Produit royalBacon = new Produit(2, "RoyalBacon", 1, 34, 8, "mcdo_royal_bacon",0);
             Produit royalCheese = new Produit(3, "RoyalCheese", 1, 37, (float) 9.5, "mcdo_royal_cheese",0);
+            Produit royalDeluxe = new Produit(4, "RoyalDeluxe", 1, 33, 7, "mcdo_royal_deluxe",0);
+            Produit tripleCheese = new Produit(5, "TripleCheese", 1, 32, 8, "mcdo_triple_cheese",0);
+            Produit premium = new Produit(6, "Premium", 1, 56, 13, "mcdo_premiumpoulet",0);
+            Produit mcwrapPoulet = new Produit(7, "McwrapPoulet", 1, 53, 4, "mcdo_mcwrap_poulet_bacon",0);
+            Produit mcCoca = new Produit(8, "McCoca", 2, 27, 27, "mcdo_coca",0);
+            Produit mcFrite = new Produit(9, "McFrite", 3, 29, (float) 0.2, "mcdo_frites",0);
+            Produit mcFirstb = new Produit(10, "McFirstb", 1, 32, (float) 6.2, "mcdo_mcfirstboeuf",0);
+            Produit mcFirstp = new Produit(11, "Mcfirstp", 1, 43, 7, "mcdo_mcfirstpoisson",0);
+            Produit mcFlurry = new Produit(12, "McFlurry", 4, 50, 50, "mcdo_mcflurry",0);
+            Produit mcwrapChevre = new Produit(13, "McwrapChevre", 1, 58, 4, "mcdo_mcwrap_chevre",0);
+
 
             produitDAO.ajouter(bigMac);
             produitDAO.ajouter(royalBacon);
             produitDAO.ajouter(royalCheese);
+            produitDAO.ajouter(royalDeluxe);
+            produitDAO.ajouter(tripleCheese);
+            produitDAO.ajouter(premium);
+            produitDAO.ajouter(mcwrapPoulet);
+            produitDAO.ajouter(mcCoca);
+            produitDAO.ajouter(mcFrite);
+            produitDAO.ajouter(mcFirstb);
+            produitDAO.ajouter(mcFirstp);
+            produitDAO.ajouter(mcFlurry);
+            produitDAO.ajouter(mcwrapChevre);
         }
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
@@ -70,7 +92,6 @@ public class Produits extends AppCompatActivity{
                         Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
         button_view_data = (ImageButton) findViewById(R.id.button_view_data);
@@ -86,7 +107,7 @@ public class Produits extends AppCompatActivity{
         setSucresValues();
     }
 
-   
+
 
     /**
      * permet le changement de vue
