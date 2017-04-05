@@ -12,6 +12,7 @@ import com.workshop.sucre.BDD.Categorie;
 import com.workshop.sucre.BDD.CategorieDAO;
 import com.workshop.sucre.BDD.Produit;
 import com.workshop.sucre.BDD.ProduitDAO;
+import com.workshop.sucre.BDD.ProtocoleDAO;
 
 import static com.workshop.sucre.R.drawable.ic_keyboard_arrow_down_black_24dp;
 import static com.workshop.sucre.R.drawable.ic_keyboard_arrow_up_black_24dp;
@@ -24,8 +25,12 @@ public class Produits extends AppCompatActivity{
     ImageButton button_view_data;
     GridLayout extendMenu1;
 
+    TextView sucresLents,sucresRapides;
+    float valueActuelR=0,valueActuelL=0;
+
     CategorieDAO categorieDAO  = new CategorieDAO(this);
     ProduitDAO produitDAO = new ProduitDAO(this);
+    ProtocoleDAO protocolDAO = new ProtocoleDAO(this);
 
 
     protected void onCreate (Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class Produits extends AppCompatActivity{
 
         categorieDAO.open();
         produitDAO.open();
+        protocolDAO.open();
 
         if(categorieDAO.selectionner(1) == null) {
             Categorie burger = new Categorie(1, "Burger", 1, "mcdo_nos_sandwichs");
@@ -57,6 +63,13 @@ public class Produits extends AppCompatActivity{
         scrool_view1 = (ScrollView) findViewById(R.id.scrollView1);
         // hide until its title is clicked
         findViewById(R.id.layoutViewUpDown).setVisibility(View.GONE);
+
+        sucresLents=(TextView) findViewById(R.id.sucresLentsData);
+        sucresRapides=(TextView) findViewById(R.id.sucresRapidesData);
+
+
+        // actualise des valeurs affiché
+        setSucresValues();
     }
 
     /**
@@ -98,6 +111,12 @@ public class Produits extends AppCompatActivity{
             button_view_data.setImageResource(ic_keyboard_arrow_down_black_24dp);
             ly.setVisibility(View.GONE);
         }
+    }
+
+    public void setSucresValues()
+    {
+        sucresLents.setText(valueActuelL+" / "+protocolDAO.selectionner(1).getLent()+"g");
+        sucresRapides.setText(valueActuelR+" / "+protocolDAO.selectionner(1).getRapide()+"g");
     }
 
 }
