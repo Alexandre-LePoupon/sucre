@@ -89,8 +89,15 @@ public class Produits extends AppCompatActivity{
     public void changeViewData(View v)
     {
         ScrollView ly=(ScrollView)findViewById(R.id.layoutViewUpDown);
-        ly.setVisibility(View.GONE);
-
+        if(ly.getVisibility()==View.GONE){
+            imgbutton1.setImageResource(ic_keyboard_arrow_up_black_24dp);
+            ly.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            imgbutton1.setImageResource(ic_keyboard_arrow_down_black_24dp);
+            ly.setVisibility(View.GONE);
+        }
     }
 
 }

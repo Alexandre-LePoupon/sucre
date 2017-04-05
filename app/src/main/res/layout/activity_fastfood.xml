@@ -30,7 +30,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#fff"/>
+                    android:background="#fff"
+                    android:layout_marginTop="10dp" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
@@ -40,7 +41,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#fff"/>
+                    android:background="#fff"
+                    android:layout_marginTop="10dp" />
 
             </LinearLayout>
 
@@ -56,17 +58,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#fff"/>
+                    android:background="#fff"
+                    android:layout_marginTop="10dp" />
 
                 <ImageButton
                     android:id="@+id/imageButton6"
-                    android:layout_marginBottom="25dp"
+                    android:layout_marginBottom="10dp"
                     android:padding="0dp"
                     app:srcCompat="@drawable/fast_food_quick"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#fff"/>
+                    android:background="#fff"
+                    android:layout_marginTop="10dp" />
 
             </LinearLayout>
 
