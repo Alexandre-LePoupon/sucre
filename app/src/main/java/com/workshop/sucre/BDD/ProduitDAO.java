@@ -15,8 +15,8 @@ public class ProduitDAO extends DAOBase{
     public static final String CATEGORIE = "categorie";
     public static final String GLUCIDE = "glucide";
     public static final String SUCRE = "sucre";
-    public static final String QUANTITE = "QUANTITE";
     public static final String IMG = "img";
+    public static final String QUANTITE = "QUANTITE";
 
     public static final String TABLE_CREATE =
             "CREATE TABLE " + TABLE_NAME + " (" +
@@ -25,7 +25,8 @@ public class ProduitDAO extends DAOBase{
                     CATEGORIE + " INTEGER, " +
                     GLUCIDE + " REAL, " +
                     SUCRE + " REAL, " +
-                    IMG + " TEXT);";
+                    IMG + "TEXT," +
+                    QUANTITE + " REAL);";
 
     public static final String TABLE_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
 
@@ -64,6 +65,7 @@ public class ProduitDAO extends DAOBase{
         value.put(GLUCIDE, p.getGlucide());
         value.put(SUCRE, p.getSucre());
         value.put(IMG, p.getImg());
+        value.put(QUANTITE,p.getQuantite());
         mDb.update(TABLE_NAME, value, KEY  + " = ?", new String[] {String.valueOf(p.getId())});
     }
 
@@ -86,21 +88,23 @@ public class ProduitDAO extends DAOBase{
         int categorie=0;
         float glucide=0;
         float sucre=0;
+        float quantite=0;
         String img="";
-        Cursor c = mDb.rawQuery("select " + NOM + "," + CATEGORIE + "," + GLUCIDE + "," + SUCRE + "," + IMG + " from " + TABLE_NAME + " where id = ?", new String[] {String.valueOf(id)});
+        Cursor c = mDb.rawQuery("select " + NOM + "," + CATEGORIE + "," + GLUCIDE + "," + SUCRE + "," + IMG + "," + QUANTITE + " from " + TABLE_NAME + " where id = ?", new String[] {String.valueOf(id)});
         while (c.moveToNext()) {
             nom = c.getString(0);
             categorie = c.getInt(1);
             glucide = c.getFloat(2);
             sucre = c.getFloat(3);
             img = c.getString(4);
+            quantite = c.getFloat(5);
         }
 
         Produit p;
-        if(nom == "" && categorie ==0 && glucide == 0 && sucre == 0 && img == "") {
+        if(nom == "" && categorie ==0 && glucide == 0 && sucre == 0 && img == "" && quantite == 0) {
             p=null;
         } else {
-            p = new Produit(id, nom, categorie, glucide, sucre, img);
+            p = new Produit(id, nom, categorie, glucide, sucre, img, quantite);
         }
         c.close();
         return p;

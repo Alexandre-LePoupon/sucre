@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridLayout;
-import android.widget.HorizontalScrollView;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
@@ -52,9 +51,9 @@ public class Produits extends AppCompatActivity{
         }
 
         if(produitDAO.selectionner(1) == null) {
-            Produit bigMac = new Produit(1, "BigMac", 1, 42, (float) 8.5, "mcdo_big_mac");
-            Produit royalBacon = new Produit(2, "RoyalBacon", 1, 34, 8, "mcdo_royal_bacon");
-            Produit royalCheese = new Produit(3, "RoyalCheese", 1, 37, (float) 9.5, "mcdo_royal_cheese");
+            Produit bigMac = new Produit(1, "BigMac", 1, 42, (float) 8.5, "mcdo_big_mac",0);
+            Produit royalBacon = new Produit(2, "RoyalBacon", 1, 34, 8, "mcdo_royal_bacon",0);
+            Produit royalCheese = new Produit(3, "RoyalCheese", 1, 37, (float) 9.5, "mcdo_royal_cheese",0);
 
             produitDAO.ajouter(bigMac);
             produitDAO.ajouter(royalBacon);
@@ -71,6 +70,8 @@ public class Produits extends AppCompatActivity{
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         button_view_data = (ImageButton) findViewById(R.id.button_view_data);
         //extendMenu1 = (GridLayout) findViewById(R.id.extendMenu);
