@@ -85,4 +85,12 @@ public class Produits extends AppCompatActivity{
             //Fx.slide_down(this, extendMenu1);
         }
     }
+
+    public void changeViewData(View v)
+    {
+        ScrollView ly=(ScrollView)findViewById(R.id.layoutViewUpDown);
+        ly.getLayoutParams().height=0;
+
+    }
+
 }
