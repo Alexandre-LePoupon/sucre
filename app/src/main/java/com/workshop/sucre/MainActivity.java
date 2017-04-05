@@ -36,12 +36,17 @@ public class MainActivity extends AppCompatActivity {
     public void accueil (View view){
 
         //Mofifie ou ajoute un protocole lors du clic sur valider
-        float lent = lent = Float.parseFloat(lentText.getText().toString());
-        float rapide = rapide = Float.parseFloat(rapideText.getText().toString());
-        Protocole protocole = new Protocole(1,lent,rapide);
-        this.modifProtocole(protocole);
-
-        startActivity(new Intent(this, FastFood.class));
+        if(lentText.getText().toString()!=null&&rapideText.getText().toString()!=null)
+        {
+            if(lentText.getText().toString().compareTo("")!=0&&rapideText.getText().toString().compareTo("")!=0)
+            {
+                float lent = lent = Float.parseFloat(lentText.getText().toString());
+                float rapide = rapide = Float.parseFloat(rapideText.getText().toString());
+                Protocole protocole = new Protocole(1,lent,rapide);
+                this.modifProtocole(protocole);
+                startActivity(new Intent(this, FastFood.class));
+            }
+        }
     }
 
     private void modifProtocole(Protocole p) {
