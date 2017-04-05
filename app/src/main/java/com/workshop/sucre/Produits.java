@@ -3,10 +3,13 @@ package com.workshop.sucre;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridLayout;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.workshop.sucre.BDD.Categorie;
 import com.workshop.sucre.BDD.CategorieDAO;
@@ -56,6 +59,18 @@ public class Produits extends AppCompatActivity{
             produitDAO.ajouter(royalBacon);
             produitDAO.ajouter(royalCheese);
         }
+
+        GridView gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(new ImageAdapter(this, produitDAO));
+
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+                Toast.makeText(Produits.this, "" + position,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         txt_help_gest = (TextView) findViewById(R.id.txt_help_gest);
         button_view_data = (ImageButton) findViewById(R.id.button_view_data);
