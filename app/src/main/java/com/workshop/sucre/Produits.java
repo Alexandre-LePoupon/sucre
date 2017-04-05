@@ -88,33 +88,12 @@ public class Produits extends AppCompatActivity{
         setSucresValues();
     }
 
+   
+
     /**
-     * onClick handler
+     * permet le changement de vue
+     * @param v
      */
-    public void toggle_contents(View v){
-        //int startHeight = 0;
-        //if(startHeight == 0) {
-        //  startHeight = scrool_view1.getHeight();
-        //}
-
-        //txt_help_gest.setVisibility( txt_help_gest.isShown()
-        //        ? View.GONE
-        //        : View.VISIBLE );
-
-        if(txt_help_gest.isShown()){
-            scrool_view1.getLayoutParams().height = 1000;
-            button_view_data.setImageResource(ic_keyboard_arrow_up_black_24dp);
-            //Fx.slide_up(this, extendMenu1);
-            txt_help_gest.setVisibility(View.GONE);
-        }
-        else{
-            scrool_view1.getLayoutParams().height = 120;
-            button_view_data.setImageResource(ic_keyboard_arrow_down_black_24dp);
-            txt_help_gest.setVisibility(View.VISIBLE);
-            //Fx.slide_down(this, extendMenu1);
-        }
-    }
-
     public void changeViewData(View v)
     {
         ScrollView ly=(ScrollView)findViewById(R.id.layoutViewUpDown);
@@ -129,6 +108,9 @@ public class Produits extends AppCompatActivity{
         }
     }
 
+    /**
+     * fonctions d'ajout de sucres
+     */
     public void setSucresValues()
     {
         sucresLents.setText(valueActuelL+" / "+protocolDAO.selectionner(1).getLent()+"g");
