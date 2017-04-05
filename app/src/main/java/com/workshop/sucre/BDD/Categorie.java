@@ -1,4 +1,4 @@
-package com.workshop.sucre;
+package com.workshop.sucre.BDD;
 
 /**
  * Created by Damien on 02/04/2017.
@@ -7,12 +7,14 @@ package com.workshop.sucre;
 public class Categorie {
     private long id;
     private String nom;
-    private String type;
+    private int type;
+    private String img;
 
-    public Categorie(long id, String nom, String type) {
+    public Categorie(long id, String nom, int type, String img) {
         this.id = id;
         this.nom = nom;
         this.type = type;
+        this.img = img;
     }
 
     public long getId() {
@@ -31,11 +33,19 @@ public class Categorie {
         this.nom = nom;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 }

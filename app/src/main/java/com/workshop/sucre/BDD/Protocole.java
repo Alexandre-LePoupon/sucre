@@ -1,4 +1,4 @@
-package com.workshop.sucre;
+package com.workshop.sucre.BDD;
 
 /**
  * Created by Asus on 31/03/2017.

@@ -85,7 +85,7 @@
 
                     <EditText
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:ems="10"
                         android:id="@+id/inputSucresLents"
                         android:background="#DDF"
@@ -116,7 +116,7 @@
                     <EditText
                         android:layout_width="130dp"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:ems="10"
                         android:id="@+id/inputSucresRapides"
                         android:textColor="#000"

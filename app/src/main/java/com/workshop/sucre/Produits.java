@@ -8,6 +8,11 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.workshop.sucre.BDD.Categorie;
+import com.workshop.sucre.BDD.CategorieDAO;
+import com.workshop.sucre.BDD.Produit;
+import com.workshop.sucre.BDD.ProduitDAO;
+
 import static com.workshop.sucre.R.drawable.ic_keyboard_arrow_down_black_24dp;
 import static com.workshop.sucre.R.drawable.ic_keyboard_arrow_up_black_24dp;
 
@@ -19,9 +24,32 @@ public class Produits extends AppCompatActivity{
     ImageButton imgbutton1;
     GridLayout extendMenu1;
 
+    CategorieDAO categorieDAO  = new CategorieDAO(this);
+    ProduitDAO produitDAO = new ProduitDAO(this);
+
+
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView(R.layout.activity_produits);
+
+        categorieDAO.open();
+        produitDAO.open();
+
+        if(categorieDAO.selectionner(1) == null) {
+            Categorie burger = new Categorie(1, "Burger", 1, "mcdo_nos_sandwichs");
+
+            categorieDAO.ajouter(burger);
+        }
+
+        if(produitDAO.selectionner(1) == null) {
+            Produit bigMac = new Produit(1, "BigMac", 1, 42, (float) 8.5, "mcdo_big_mac");
+            Produit royalBacon = new Produit(2, "RoyalBacon", 1, 34, 8, "mcdo_royal_bacon");
+            Produit royalCheese = new Produit(3, "RoyalCheese", 1, 37, (float) 9.5, "mcdo_royal_cheese");
+
+            produitDAO.ajouter(bigMac);
+            produitDAO.ajouter(royalBacon);
+            produitDAO.ajouter(royalCheese);
+        }
 
         txt_help_gest = (TextView) findViewById(R.id.txt_help_gest);
         imgbutton1 = (ImageButton) findViewById(R.id.imageButton17);

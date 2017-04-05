@@ -1,4 +1,4 @@
-package com.workshop.sucre;
+package com.workshop.sucre.BDD;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.Cursor;
  * Created by Asus on 31/03/2017.
  */
 
-public class ProtocoleDAO extends DAOBase{
+public class ProtocoleDAO extends DAOBase {
     public static final String TABLE_NAME = "Protocole";
     public static final String KEY = "id";
     public static final String LENT = "lent";
@@ -64,8 +64,14 @@ public class ProtocoleDAO extends DAOBase{
             lent = c.getFloat(0);
             rapide = c.getFloat(1);
         }
+
+        Protocole p;
+        if(lent == 0 && rapide ==0) {
+            p=null;
+        } else {
+            p = new Protocole(id, lent, rapide);
+        }
         c.close();
-        Protocole p = new Protocole(id, lent, rapide);
         return p;
     }
 }

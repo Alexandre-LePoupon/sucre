@@ -1,4 +1,4 @@
-package com.workshop.sucre;
+package com.workshop.sucre.BDD;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,10 +16,13 @@ public abstract class DAOBase {
 
     public DAOBase(Context pContext) {
         this.mHandler = new DatabaseHandler(pContext, NOM, null, VERSION);
+       // this.open();
     }
 
     public SQLiteDatabase open() {
+
         mDb = mHandler.getWritableDatabase();
+        //mHandler.onUpgrade(mDb,1,2);
         return mDb;
     }
 

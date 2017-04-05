@@ -1,4 +1,4 @@
-package com.workshop.sucre;
+package com.workshop.sucre.BDD;
 
 /**
  * Created by Damien on 02/04/2017.
