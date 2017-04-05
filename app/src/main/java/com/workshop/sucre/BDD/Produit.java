@@ -10,6 +10,7 @@ public class Produit {
     private int categorie;
     private float glucide;
     private float sucre;
+    private float quantite;
     private String img;
 
     public Produit(long id, String nom, int categorie, float glucide, float sucre, String img) {
@@ -68,4 +69,6 @@ public class Produit {
     public void setImg(String img) {
         this.img = img;
     }
+
+    public float getQuantite(){return this.quantite;}
 }

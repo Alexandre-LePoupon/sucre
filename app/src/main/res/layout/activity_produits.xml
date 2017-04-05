@@ -62,7 +62,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp"
-                android:id="@+id/viewDataButton"
+                android:id="@+id/button_view_data"
                 android:layout_weight="1"
                 android:background="#aaf"
                 android:onClick="changeViewData"
@@ -109,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:background="#55c"
+                    android:background="#557"
                     android:paddingBottom="10dp"
                     android:paddingTop="10dp"
                     android:elevation="1dp">

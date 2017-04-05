@@ -15,6 +15,7 @@ public class ProduitDAO extends DAOBase{
     public static final String CATEGORIE = "categorie";
     public static final String GLUCIDE = "glucide";
     public static final String SUCRE = "sucre";
+    public static final String QUANTITE = "QUANTITE";
     public static final String IMG = "img";
 
     public static final String TABLE_CREATE =
@@ -42,6 +43,7 @@ public class ProduitDAO extends DAOBase{
         value.put(ProduitDAO.GLUCIDE, p.getGlucide());
         value.put(ProduitDAO.SUCRE, p.getSucre());
         value.put(ProduitDAO.IMG, p.getImg());
+        value.put(ProduitDAO.QUANTITE,p.getQuantite());
         mDb.insert(ProduitDAO.TABLE_NAME, null, value);
     }
 

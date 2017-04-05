@@ -21,7 +21,7 @@ public class Produits extends AppCompatActivity{
 
     TextView txt_help_gest;
     ScrollView scrool_view1;
-    ImageButton imgbutton1;
+    ImageButton button_view_data;
     GridLayout extendMenu1;
 
     CategorieDAO categorieDAO  = new CategorieDAO(this);
@@ -52,11 +52,11 @@ public class Produits extends AppCompatActivity{
         }
 
         txt_help_gest = (TextView) findViewById(R.id.txt_help_gest);
-        imgbutton1 = (ImageButton) findViewById(R.id.imageButton17);
+        button_view_data = (ImageButton) findViewById(R.id.button_view_data);
         //extendMenu1 = (GridLayout) findViewById(R.id.extendMenu);
         scrool_view1 = (ScrollView) findViewById(R.id.scrollView1);
         // hide until its title is clicked
-        txt_help_gest.setVisibility(View.GONE);
+        findViewById(R.id.layoutViewUpDown).setVisibility(View.GONE);
     }
 
     /**
@@ -74,13 +74,13 @@ public class Produits extends AppCompatActivity{
 
         if(txt_help_gest.isShown()){
             scrool_view1.getLayoutParams().height = 1000;
-            imgbutton1.setImageResource(ic_keyboard_arrow_up_black_24dp);
+            button_view_data.setImageResource(ic_keyboard_arrow_up_black_24dp);
             //Fx.slide_up(this, extendMenu1);
             txt_help_gest.setVisibility(View.GONE);
         }
         else{
             scrool_view1.getLayoutParams().height = 120;
-            imgbutton1.setImageResource(ic_keyboard_arrow_down_black_24dp);
+            button_view_data.setImageResource(ic_keyboard_arrow_down_black_24dp);
             txt_help_gest.setVisibility(View.VISIBLE);
             //Fx.slide_down(this, extendMenu1);
         }
@@ -90,12 +90,12 @@ public class Produits extends AppCompatActivity{
     {
         ScrollView ly=(ScrollView)findViewById(R.id.layoutViewUpDown);
         if(ly.getVisibility()==View.GONE){
-            imgbutton1.setImageResource(ic_keyboard_arrow_up_black_24dp);
+            button_view_data.setImageResource(ic_keyboard_arrow_up_black_24dp);
             ly.setVisibility(View.VISIBLE);
         }
         else
         {
-            imgbutton1.setImageResource(ic_keyboard_arrow_down_black_24dp);
+            button_view_data.setImageResource(ic_keyboard_arrow_down_black_24dp);
             ly.setVisibility(View.GONE);
         }
     }
