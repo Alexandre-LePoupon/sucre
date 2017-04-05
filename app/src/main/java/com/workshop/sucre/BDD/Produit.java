@@ -13,13 +13,14 @@ public class Produit {
     private float quantite;
     private String img;
 
-    public Produit(long id, String nom, int categorie, float glucide, float sucre, String img) {
+    public Produit(long id, String nom, int categorie, float glucide, float sucre, String img, float quantite) {
         this.id = id;
         this.nom = nom;
         this.categorie = categorie;
         this.glucide = glucide;
         this.sucre = sucre;
         this.img = img;
+        this.quantite = quantite;
     }
 
     public long getId() {
