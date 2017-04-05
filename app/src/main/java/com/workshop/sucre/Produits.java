@@ -72,11 +72,8 @@ public class Produits extends AppCompatActivity{
             }
         });
 
-
-        txt_help_gest = (TextView) findViewById(R.id.txt_help_gest);
         button_view_data = (ImageButton) findViewById(R.id.button_view_data);
         //extendMenu1 = (GridLayout) findViewById(R.id.extendMenu);
-        scrool_view1 = (ScrollView) findViewById(R.id.scrollView1);
         // hide until its title is clicked
         findViewById(R.id.layoutViewUpDown).setVisibility(View.GONE);
 

@@ -68,6 +68,17 @@ public class ProduitDAO extends DAOBase{
     }
 
     /**
+     * retourne nombre de produit global
+     */
+    public long getSize() {
+        String countQuery = "SELECT  * FROM " + TABLE_NAME;
+        Cursor cursor = mDb.rawQuery(countQuery, null);
+        int cnt = cursor.getCount();
+        cursor.close();
+        return cnt;
+    }
+
+    /**
      * @param id l'identifiant du protocole à récupérer
      */
     public Produit selectionner(long id) {

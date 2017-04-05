@@ -26,7 +26,7 @@ public class ImageAdapter extends BaseAdapter {
     public ImageAdapter(Context c, ProduitDAO produitDAO) {
         mContext = c;
         //TODO : Ajouter filtre categorie, fastfood
-        for(int i = 1; i<4; i++) {
+        for(int i = 1; i<=produitDAO.getSize(); i++) {
             listProd.add(produitDAO.selectionner(i));
         }
         //TODO : Recuperation id
