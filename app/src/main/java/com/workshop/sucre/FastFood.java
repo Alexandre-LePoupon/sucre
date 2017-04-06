@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 import com.workshop.sucre.BDD.FastFoodBDD;
 import com.workshop.sucre.BDD.FastFoodDAO;
@@ -44,5 +45,22 @@ public class FastFood extends AppCompatActivity {
         Intent intent = new Intent(this, Produits.class);
         intent.putExtra("fastfood", 2);
         startActivity(intent);
+    }
+
+    public void clickbk (View view){
+        Toast.makeText(FastFood.this, " FastFood à venir ",
+                Toast.LENGTH_SHORT).show();
+    }
+    public void clickvf (View view){
+        Toast.makeText(FastFood.this, " FastFood à venir ",
+                Toast.LENGTH_SHORT).show();
+    }
+    public void clickquick (View view){
+        Toast.makeText(FastFood.this, " FastFood à venir ",
+                Toast.LENGTH_SHORT).show();
+    }
+    public void clicksb (View view){
+        Toast.makeText(FastFood.this, " FastFood à venir ",
+                Toast.LENGTH_SHORT).show();
     }
 }
