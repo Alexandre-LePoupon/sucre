@@ -82,10 +82,10 @@ public class Produits extends AppCompatActivity {
             Produit tripleCheese = new Produit(5, "TripleCheese", 1, 32, 8, "mcdo_triple_cheese", 0);
             Produit premium = new Produit(6, "Premium", 1, 56, 13, "mcdo_premiumpoulet", 0);
             Produit mcwrapPoulet = new Produit(7, "McwrapPoulet", 1, 53, 4, "mcdo_mcwrap_poulet_bacon", 0);
-            Produit mcCoca = new Produit(8, "McCoca", 2, 27, 27, "mcdo_coca", 0);
-            Produit mcFrite = new Produit(9, "McFrite", 3, 29, (float) 0.2, "mcdo_frites", 0);
-            Produit mcFirstb = new Produit(10, "McFirstb", 1, 32, (float) 6.2, "mcdo_mcfirstboeuf", 0);
-            Produit mcFirstp = new Produit(11, "Mcfirstp", 1, 43, 7, "mcdo_mcfirstpoisson", 0);
+            Produit mcCoca = new Produit(8, "Coca", 2, 27, 27, "mcdo_coca", 0);
+            Produit mcFrite = new Produit(9, "Frite", 3, 29, (float) 0.2, "mcdo_frites", 0);
+            Produit mcFirstb = new Produit(10, "McFirstBoeuf", 1, 32, (float) 6.2, "mcdo_mcfirstboeuf", 0);
+            Produit mcFirstp = new Produit(11, "McFirstPoisson", 1, 43, 7, "mcdo_mcfirstpoisson", 0);
             Produit mcFlurry = new Produit(12, "McFlurry", 4, 50, 50, "mcdo_mcflurry", 0);
             Produit mcwrapChevre = new Produit(13, "McwrapChevre", 1, 58, 4, "mcdo_mcwrap_chevre", 0);
 
@@ -94,7 +94,7 @@ public class Produits extends AppCompatActivity {
             Produit boxMaster = new Produit(14, "BoxMaster", 5, 59, 1, "kfc_boxmaster", 0);
             Produit brazer = new Produit(15, "Brazer", 5, 37, 7, "kfc_brazer", 0);
             Produit doubleSweatFire = new Produit(16, "DoubleSweatFire", 5, (float) 51.6, 0, "kfc_double_sweatandfire", 0);
-            Produit kfcFrite = new Produit(17, "KfcFrite", 6, 35, 1, "kfc_frites", 0);
+            Produit kfcFrite = new Produit(17, "Frite", 6, 35, 1, "kfc_frites", 0);
             Produit kreamBall = new Produit(18, "KreamBall", 7, 50, 50, "kfc_ kreamball", 0);
             Produit mixBucket = new Produit(19, "MixBucket", 5, (float) 22.5, 0, "kfc_mixbucket", 0);
             Produit saladeBrazer = new Produit(20, "SaladeBrazer", 8, (float) 5.5, 0, "kfc_salde_brazer", 0);
