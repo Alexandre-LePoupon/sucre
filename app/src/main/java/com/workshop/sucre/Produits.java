@@ -309,7 +309,7 @@ public class Produits extends AppCompatActivity {
                 for (int j = 0; j < produitDAO.getSize(); j++) {
                     if (produitDAO.selectionner(j + 1).getNom().compareTo(temp1.getNom()) == 0) {
                         Produit temp = produitDAO.selectionner(j + 1);
-                        if (temp.getQuantite() == 0 && temp.getFastfood()==fastfood) {
+                        if (temp.getQuantite() == 0 && temp.getFastfood() == fastfood) {
                             Toast.makeText(Produits.this, temp.getNom() + " ajouté.",
                                     Toast.LENGTH_SHORT).show();
                         } else {
@@ -322,7 +322,6 @@ public class Produits extends AppCompatActivity {
                         actualiseProduitToList();
                     }
                 }
-
 
             }
         });
