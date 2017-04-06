@@ -59,6 +59,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String PRODUIT_SUCRE = "sucre";
     public static final String PRODUIT_IMG = "img";
     public static final String PRODUIT_QUANTITE = "quantite";
+    public static final String PRODUIT_FASTFOOD = "fastfood";
 
     public static final String PRODUIT_TABLE_CREATE =
             "CREATE TABLE " + PRODUIT_TABLE_NAME + " (" +
@@ -68,6 +69,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     PRODUIT_GLUCIDE + " REAL, " +
                     PRODUIT_SUCRE + " REAL, " +
                     PRODUIT_QUANTITE + " REAL, " +
+                    PRODUIT_FASTFOOD + " INTEGER " +
                     PRODUIT_IMG + " TEXT);";
 
     public static final String PRODUIT_TABLE_DROP = "DROP TABLE IF EXISTS " + PRODUIT_TABLE_NAME + ";";

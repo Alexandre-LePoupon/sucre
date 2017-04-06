@@ -11,9 +11,10 @@ public class Produit {
     private float glucide;
     private float sucre;
     private float quantite;
+    private float fastfood;
     private String img;
 
-    public Produit(long id, String nom, int categorie, float glucide, float sucre, String img, float quantite) {
+    public Produit(long id, String nom, int categorie, float glucide, float sucre, String img, float quantite, int fastfood) {
         this.id = id;
         this.nom = nom;
         this.categorie = categorie;
@@ -21,6 +22,7 @@ public class Produit {
         this.sucre = sucre;
         this.img = img;
         this.quantite = quantite;
+        this.fastfood = fastfood;
     }
 
     public long getId() {
@@ -74,4 +76,12 @@ public class Produit {
     public float getQuantite(){return this.quantite;}
 
     public void setQuantite(float q){this.quantite=q;}
+
+    public float getFastfood() {
+        return fastfood;
+    }
+
+    public void setFastfood(float fastfood) {
+        this.fastfood = fastfood;
+    }
 }
