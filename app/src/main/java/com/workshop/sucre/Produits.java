@@ -437,7 +437,10 @@ public class Produits extends AppCompatActivity {
         if (ly.getVisibility() == View.GONE) {
             button_view_data.setImageResource(ic_keyboard_arrow_up_black_24dp);
             ly.setVisibility(View.VISIBLE);
-            findViewById(R.id.listViewData).getLayoutParams().height = 300;
+
+            findViewById(R.id.listViewData).getLayoutParams().height =(int) (300.0*((ListView)findViewById(R.id.listViewData)).getResources().getDisplayMetrics().density);
+
+           
         } else {
             button_view_data.setImageResource(ic_keyboard_arrow_down_black_24dp);
             ly.setVisibility(View.GONE);
