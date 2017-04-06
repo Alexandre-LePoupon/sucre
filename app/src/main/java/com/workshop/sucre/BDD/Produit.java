@@ -72,4 +72,6 @@ public class Produit {
     }
 
     public float getQuantite(){return this.quantite;}
+
+    public void setQuantite(float q){this.quantite=q;}
 }

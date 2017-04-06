@@ -1,6 +1,7 @@
 package com.workshop.sucre;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -30,9 +31,16 @@ public class ImageAdapter extends BaseAdapter {
             listProd.add(produitDAO.selectionner(i));
         }
         //TODO : Recuperation id
-        id = mContext.getResources().getIdentifier(listProd.get(0).getImg(),  "drawable", mContext.getPackageName());
-        mThumbIds = new Integer[1];
-        mThumbIds[0]=id;
+        mThumbIds = new Integer[listProd.size()];
+        for(int j=0;j<listProd.size();j++)
+        {
+            mThumbIds[j]=mContext.getResources().getIdentifier(listProd.get(j).getImg(),  "drawable", mContext.getPackageName());
+        }
+    }
+
+    public Produit getProduct(int id)
+    {
+        return listProd.get(id);
     }
 
     public int getCount() {
@@ -53,8 +61,9 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
+
             imageView.setPadding(0,0,0,0);
         } else {
             imageView = (ImageView) convertView;
