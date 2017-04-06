@@ -1,11 +1,13 @@
 package com.workshop.sucre;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.workshop.sucre.BDD.Produit;
@@ -25,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
+
+        WindowManager manager = (WindowManager) this.getSystemService(Activity.WINDOW_SERVICE);
+        int screenWidth = manager.getDefaultDisplay().getWidth();
+
+        findViewById(R.id.inputSucresLents).getLayoutParams().width = (int) (screenWidth * 0.20);
+        findViewById(R.id.inputSucresLents).getLayoutParams().height = (int) (screenWidth * 0.06);
+
+        findViewById(R.id.inputSucresRapides).getLayoutParams().width = (int) (screenWidth * 0.20);
+        findViewById(R.id.inputSucresRapides).getLayoutParams().height = (int) (screenWidth * 0.06);
+
         protocoleDAO.open();
 
         //protocoleDAO.supprimer(1);
