@@ -455,9 +455,16 @@ public class Produits extends AppCompatActivity {
         sucresLents.setText(valueActuelL + " / " + protocolDAO.selectionner(1).getLent() + "g");
         sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Vous avez dépassé les quantités de sucres?");
+        builder.setTitle("Vous avez dépassé les quantités de sucres?");
+        builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+            }
+        });
+
         if (valueActuelL >= protocolDAO.selectionner(1).getLent()) {
             ImageView img1 = (ImageView) findViewById(R.id.img1);
-
             img1.setVisibility(View.VISIBLE);
         } else {
             ImageView img1 = (ImageView) findViewById(R.id.img1);
@@ -467,13 +474,18 @@ public class Produits extends AppCompatActivity {
 
         if (valueActuelR >= protocolDAO.selectionner(1).getRapide()) {
             ImageView img2 = (ImageView) findViewById(R.id.img2);
-
             img2.setVisibility(View.VISIBLE);
         } else {
             ImageView img2 = (ImageView) findViewById(R.id.img2);
 
             img2.setVisibility(View.INVISIBLE);
         }
+        if(valueActuelR >= protocolDAO.selectionner(1).getRapide() || valueActuelL >= protocolDAO.selectionner(1).getLent())
+        {
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+
     }
 
     public Activity getActivity() {
