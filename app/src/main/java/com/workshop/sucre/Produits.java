@@ -339,7 +339,7 @@ public class Produits extends AppCompatActivity {
                 int j;
                 if (itemValue.compareTo("Reset") == 0 && position != 0) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setMessage("Supprimer la list?");
+                    builder.setMessage("Supprimer la liste ?");
                     builder.setTitle("Réinitialisation de la liste");
                     builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
