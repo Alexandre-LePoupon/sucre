@@ -139,7 +139,7 @@
                     <ImageButton
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/mcdo_en_ce_moment"
+                        app:srcCompat="@drawable/mcdo_nos_sandwichs"
                         android:id="@+id/imageButton"
                         android:padding="0dp"
                         android:layout_marginLeft="5dp"
@@ -148,7 +148,7 @@
                     <ImageButton
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/mcdo_nos_menus"
+                        app:srcCompat="@drawable/mcdo_frites_sauces"
                         android:id="@+id/imageButton1"
                         android:padding="0dp"
                         android:layout_marginLeft="5dp"
@@ -157,7 +157,7 @@
                     <ImageButton
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/mcdo_nos_sandwichs"
+                        app:srcCompat="@drawable/mcdo_nos_boissons"
                         android:id="@+id/imageButton2"
                         android:padding="0dp"
                         android:layout_marginLeft="5dp"
@@ -166,7 +166,7 @@
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/mcdo_petite_faim"
+                        app:srcCompat="@drawable/mcdo_nos_desserts"
                         android:id="@+id/imageButton3"
                         android:layout_weight="1"
                         android:padding="0dp"

@@ -92,9 +92,10 @@ public class ProduitDAO extends DAOBase{
         int categorie=0;
         float glucide=0;
         float sucre=0;
+        String img="";
         float quantite=0;
         int fastfood=0;
-        String img="";
+
         Cursor c = mDb.rawQuery("select " + NOM + "," + CATEGORIE + "," + GLUCIDE + "," + SUCRE + "," + IMG + "," + QUANTITE + "," + FASTFOOD + " from " + TABLE_NAME + " where id = ?", new String[] {String.valueOf(id)});
         while (c.moveToNext()) {
             nom = c.getString(0);
@@ -123,9 +124,10 @@ public class ProduitDAO extends DAOBase{
         String nom="";
         float glucide=0;
         float sucre=0;
+        String img="";
         float quantite=0;
         int fastfood=0;
-        String img="";
+
         Cursor c = mDb.rawQuery("select " + NOM + "," + GLUCIDE + "," + SUCRE + "," + IMG + "," + QUANTITE + "," + FASTFOOD + " from " + TABLE_NAME + " where id = ? and categorie = ?", new String[] {String.valueOf(id),String.valueOf(categorie)});
         while (c.moveToNext()) {
             nom = c.getString(0);
