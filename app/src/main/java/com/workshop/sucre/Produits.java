@@ -446,8 +446,7 @@ public class Produits extends AppCompatActivity {
      * fonctions d'ajout de sucres
      */
     public void setSucresValues() {
-        sucresLents.setText(valueActuelL + " / " + protocolDAO.selectionner(1).getLent() + "g");
-        sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
+
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("Vous avez dépassé les quantités du protocole!");
@@ -463,13 +462,20 @@ public class Produits extends AppCompatActivity {
                 p.setLent(p.getLent()+value);
                 p.setRapide(p.getRapide()+value);
                 protocolDAO.modifier(p);
-                setSucresValues();
+
+                sucresLents.setText(valueActuelL + " / " + protocolDAO.selectionner(1).getLent() + "g");
+                sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
+
+                dialog.dismiss();
             }
         });
         builder.setNegativeButton("Non",new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
             }
         });
+
+        sucresLents.setText(valueActuelL + " / " + protocolDAO.selectionner(1).getLent() + "g");
+        sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
 
         if (valueActuelL >= protocolDAO.selectionner(1).getLent()) {
             ImageView img1 = (ImageView) findViewById(R.id.img1);
