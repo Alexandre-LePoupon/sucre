@@ -152,10 +152,12 @@ public class Produits extends AppCompatActivity {
                  * ajout du produit a la list. Si il y est déja -> + 1
                  *
                  */
-                Produit temp = ((ImageAdapter) gridview.getAdapter()).getProduct(position);
+                Produit temp1 = ((ImageAdapter) gridview.getAdapter()).getProduct((int) position);
+
 
                 for (int j = 0; j < produitDAO.getSize(); j++) {
-                    if (produitDAO.selectionner(j + 1).getNom().compareTo(temp.getNom()) == 0) {
+                    if (produitDAO.selectionner(j + 1).getNom().compareTo(temp1.getNom()) == 0) {
+                        Produit temp =produitDAO.selectionner(j+1);
                         if (temp.getQuantite() == 0) {
                             Toast.makeText(Produits.this, temp.getNom() + " ajouté.",
                                     Toast.LENGTH_SHORT).show();
