@@ -337,7 +337,7 @@ public class Produits extends AppCompatActivity {
                 String itemValue = (String) listView.getItemAtPosition(position);
                 itemValue = itemValue.split(" ")[0];  // récupération de nom uniquement
                 int j;
-                if (itemValue.compareTo("Reset") == 0 && position != 0) {
+                if (itemValue.compareTo("Remise à zéro") == 0 && position != 0) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setMessage("Supprimer la liste ?");
                     builder.setTitle("Réinitialisation de la liste");
