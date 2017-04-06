@@ -137,19 +137,19 @@ public class Produits extends AppCompatActivity {
             Produit mcdo_cocalight = new Produit(23, "CocaColaLight", 2, 27, 27, "mcdo_cocalight", 0, 1);
             Produit mcdo_cocazero = new Produit(24, "CocaColaZero", 2, 27, 27, "mcdo_cocazero", 0, 1);
             Produit mcdo_evian = new Produit(25, "Evian", 2, 27, 27, "mcdo_evian", 0, 1);
-            Produit mcdo_fanta = new Produit(26, "Fanta", 2, 27, 27, "mcdo_fanta", 0, 1);
-            Produit mcdo_icetea = new Produit(27, "IceTea", 2, 27, 27, "mcdo_icetea", 0, 1);
-            Produit mcdo_sprite = new Produit(28, "Sprite", 2, 27, 27, "mcdo_sprite", 0, 1);
+            Produit mcdo_fanta = new Produit(26, "Fanta", 2, 17, 17, "mcdo_fanta", 0, 1);
+            Produit mcdo_icetea = new Produit(27, "IceTea", 2, 17, 17, "mcdo_icetea", 0, 1);
+            Produit mcdo_sprite = new Produit(28, "Sprite", 2, 17, 17, "mcdo_sprite", 0, 1);
             Produit mcdo_spritezero = new Produit(29, "SpriteZero", 2, 27, 27, "mcdo_spritezero", 0, 1);
 
 
             /*--------------------------- mcdo_desserts ----------------------------------------------------------------------------*/
 
-            Produit ananas = new Produit(30, "Ananas", 3, 27, 27, "ananas", 0, 1);
-            Produit frappe = new Produit(31, "Frappe", 3, 27, 27, "frappe", 0, 1);
-            Produit mc_fleury = new Produit(32, "McFlurry", 3, 27, 27, "mc_fleurry", 0, 1);
-            Produit patisseries = new Produit(33, "Patisseries", 3, 27, 27, "patisseries", 0, 1);
-            Produit very_parfait = new Produit(34, "VeryParfait", 3, 27, 27, "very_parfait", 0, 1);
+            Produit ananas = new Produit(30, "Ananas", 3,(float) 8.8,(float) 7.7, "ananas", 0, 1);
+            Produit frappe = new Produit(31, "Frappe", 3, 33, 27, "frappe", 0, 1);
+            Produit mc_fleury = new Produit(32, "McFlurry", 3, 41, 35, "mc_fleurry", 0, 1);
+            Produit patisseries = new Produit(33, "Patisseries", 3, 45, 27, "patisseries", 0, 1);
+            Produit very_parfait = new Produit(34, "VeryParfait", 3, 71, 65, "very_parfait", 0, 1);
 
 
 
@@ -178,9 +178,9 @@ public class Produits extends AppCompatActivity {
             Produit kfc_cocalight = new Produit(45, "CocaColaLight", 6, 27, 27, "mcdo_cocalight", 0, 2);
             Produit kfc_cocazero = new Produit(46, "CocaColaZero", 6, 27, 27, "mcdo_cocazero", 0, 2);
             Produit kfc_evian = new Produit(47, "Evian", 6, 27, 27, "mcdo_evian", 0, 2);
-            Produit kfc_fanta = new Produit(48, "Fanta", 6, 27, 27, "mcdo_fanta", 0, 2);
-            Produit kfc_icetea = new Produit(49, "IceTea", 6, 27, 27, "mcdo_icetea", 0, 2);
-            Produit kfc_sprite = new Produit(50, "Sprite", 6, 27, 27, "mcdo_sprite", 0, 2);
+            Produit kfc_fanta = new Produit(48, "Fanta", 6, 17, 17, "mcdo_fanta", 0, 2);
+            Produit kfc_icetea = new Produit(49, "IceTea", 6, 17, 17, "mcdo_icetea", 0, 2);
+            Produit kfc_sprite = new Produit(50, "Sprite", 6, 17, 17, "mcdo_sprite", 0, 2);
             Produit kfc_spritezero = new Produit(60, "SpriteZero", 6, 27, 27, "mcdo_spritezero", 0, 2);
 
             /*--------------------------- kfc_desserts -----------------------------------------------------------------------------*/
