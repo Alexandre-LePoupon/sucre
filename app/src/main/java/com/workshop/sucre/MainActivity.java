@@ -3,6 +3,8 @@ package com.workshop.sucre;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 
@@ -10,6 +12,8 @@ import com.workshop.sucre.BDD.Produit;
 import com.workshop.sucre.BDD.ProduitDAO;
 import com.workshop.sucre.BDD.Protocole;
 import com.workshop.sucre.BDD.ProtocoleDAO;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

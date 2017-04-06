@@ -39,7 +39,7 @@
 
                 <ImageButton
                     android:id="@+id/imageButton5"
-                    android:onClick="produits"
+                    android:onClick="mcdo"
                     android:padding="0dp"
                     app:srcCompat="@drawable/fast_food_mcdo"
                     android:layout_width="match_parent"
@@ -94,6 +94,7 @@
                     app:srcCompat="@drawable/fast_food_kfc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="kfc"
                     android:layout_weight="1"
                     android:background="#fff"
                     android:layout_margin="5dp" />

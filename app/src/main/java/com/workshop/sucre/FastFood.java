@@ -34,7 +34,15 @@ public class FastFood extends AppCompatActivity {
         }
     }
 
-    public void produits (View view) {
-        startActivity(new Intent(this, Produits.class));
+    public void mcdo (View view) {
+        Intent intent = new Intent(this, Produits.class);
+        intent.putExtra("fastfood", 1);
+        startActivity(intent);
+    }
+
+    public void kfc (View view) {
+        Intent intent = new Intent(this, Produits.class);
+        intent.putExtra("fastfood", 2);
+        startActivity(intent);
     }
 }

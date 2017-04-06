@@ -2,6 +2,8 @@ package com.workshop.sucre;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +23,7 @@ import com.workshop.sucre.BDD.ProduitDAO;
 import com.workshop.sucre.BDD.ProtocoleDAO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.workshop.sucre.R.drawable.ic_keyboard_arrow_down_black_24dp;
 import static com.workshop.sucre.R.drawable.ic_keyboard_arrow_up_black_24dp;
@@ -44,6 +47,10 @@ public class Produits extends AppCompatActivity {
     ProduitDAO produitDAO = new ProduitDAO(this);
     ProtocoleDAO protocolDAO = new ProtocoleDAO(this);
 
+    private  RecyclerView  horizontal_recycler_view;
+    private List<Categorie> horizontalList;
+    private CustomAdapter horizontalAdapter;
+
     /*****************************************************************
      * 7
      * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! id a incrément pour les catégories
@@ -54,6 +61,9 @@ public class Produits extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produits);
+
+        Bundle b = getIntent().getExtras();
+        int fastfood = b.getInt("fastfood");
 
         /**
          * ouverture des tables
@@ -238,6 +248,21 @@ public class Produits extends AppCompatActivity {
         }
 
         gridview = (GridView) findViewById(R.id.gridview);
+
+        //View categorie
+        horizontal_recycler_view= (RecyclerView) findViewById(R.id.listcategorie);
+        horizontalList = new ArrayList<Categorie>();
+        for (int i = 0; i < 4; i++) {
+            horizontalList.add(categorieDAO.selectionner(i));
+        }
+        horizontalAdapter=new CustomAdapter(horizontalList,Produits.this, gridview, produitDAO);
+        LinearLayoutManager horizontalLayoutManager
+                = new LinearLayoutManager(Produits.this, LinearLayoutManager.HORIZONTAL, false);
+        horizontal_recycler_view.setLayoutManager(horizontalLayoutManager);
+        horizontal_recycler_view.setAdapter(horizontalAdapter);
+
+
+
         gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
 
         /**
@@ -261,7 +286,7 @@ public class Produits extends AppCompatActivity {
                  * ajout du produit a la list. Si il y est déja -> + 1
                  *
                  */
-                Produit temp1 = ((ImageAdapter) gridview.getAdapter()).getProduct((int) position);
+                Produit temp1 = ((ImageAdapter) gridview.getAdapter()).getProduct(position);
 
 
                 for (int j = 0; j < produitDAO.getSize(); j++) {
@@ -417,22 +442,5 @@ public class Produits extends AppCompatActivity {
         }
         setSucresValues();
         adapter.add("Reset");
-    }
-
-
-    public void onClicBoutonCategorie1 (View view){
-        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
-    }
-
-    public void onClicBoutonCategorie2(View view) {
-        gridview.setAdapter(new ImageAdapter(this, produitDAO, 2));
-    }
-
-    public void onClicBoutonCategorie3(View view) {
-        gridview.setAdapter(new ImageAdapter(this, produitDAO, 3));
-    }
-
-    public void onClicBoutonCategorie4(View view) {
-        gridview.setAdapter(new ImageAdapter(this, produitDAO, 4));
     }
 }

@@ -54,7 +54,7 @@
                 tools:layout_marginTop="10dp">
 
                 <TextView
-                    android:text="Choisissez votre protocole :"
+                    android:text="Définisez votre protocole :"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/messageChoixProtocol"
