@@ -252,7 +252,7 @@ public class Produits extends AppCompatActivity {
         //View categorie
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.listcategorie);
         horizontalList = new ArrayList<Categorie>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 1; i < 5; i++) {
             horizontalList.add(categorieDAO.selectionner(i));
         }
         horizontalAdapter=new CustomAdapter(horizontalList,Produits.this, gridview, produitDAO);
