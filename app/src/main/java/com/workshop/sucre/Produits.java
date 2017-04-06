@@ -115,39 +115,36 @@ public class Produits extends AppCompatActivity {
 
             Produit bigMac = new Produit(1, "BigMac", 0, 42, (float) 8.5, "mcdo_big_mac", 0, 1);
             Produit royalBacon = new Produit(2, "RoyalBacon", 0, 34, 8, "mcdo_royal_bacon", 0, 1);
-            Produit royalCheese = new Produit(3, "RoyalCheese", 0, 37, (float) 9.5, "mcdo_royal_cheese", 0, 1);
             Produit royalDeluxe = new Produit(4, "RoyalDeluxe", 0, 33, 7, "mcdo_royal_deluxe", 0, 1);
             Produit tripleCheese = new Produit(5, "TripleCheese", 0, 32, 8, "mcdo_triple_cheese", 0, 1);
-            Produit premium = new Produit(6, "Premium", 0, 56, 13, "mcdo_premiumpoulet", 0, 1);
-            Produit mcwrapPoulet = new Produit(8, "McwrapPoulet", 0, 53, 4, "mcdo_mcwrap_poulet_bacon", 0, 1);
-            Produit mcFirstb = new Produit(9, "McFirstBoeuf", 0, 32, (float) 6.2, "mcdo_mcfirstboeuf", 0, 1);
+            Produit mcFirstb = new Produit(9, "McFirstPoulet", 0, 32, (float) 6.2, "mcdo_mcfirstboeuf", 0, 1);
             Produit mcFirstp = new Produit(10, "McFirstPoisson", 0, 43, 7, "mcdo_mcfirstpoisson", 0, 1);
             Produit mcwrapChevre = new Produit(11, "McwrapChevre", 0, 58, 4, "mcdo_mcwrap_chevre", 0, 1);
 
 
             /*--------------------------- mcdo_frites ------------------------------------------------------------------------------*/
-            Produit barbecue = new Produit(12, "barbecue", 1, 27, 27, "barbecue", 0, 1);
-            Produit grande_deluxe = new Produit(13, "GrandeDeluxePotatoes", 1, 27, 27, "grande_deluxe", 0, 1);
-            Produit grande_frite = new Produit(14, "GrandeFrite", 1, 27, 27, "grande_frite", 0, 1);
-            Produit ketchup = new Produit(15, "Ketchup", 1, 27, 27, "ketchup", 0, 1);
-            Produit moutarde = new Produit(16, "Moutarde", 1, 27, 27, "moutarde", 0, 1);
-            Produit moy_deluxe = new Produit(17, "MoyennePotatoes", 1, 27, 27, "moy_deluxe", 0, 1);
-            Produit moy_frite = new Produit(18, "MoyenneFrite", 1, 27, 27, "moy_frite", 0, 1);
-            Produit sauce_chinoise = new Produit(19, "SauceChinoise", 1, 27, 27, "sauce_chinoise", 0, 1);
-            Produit sauce_curry = new Produit(20, "SauceCurry", 1, 27, 27, "sauce_curry", 0, 1);
-            Produit sauce_deluxe = new Produit(21, "SauceDeluxe", 1, 27, 27, "sauce_deluxe", 0, 1);
+            Produit barbecue = new Produit(12, "barbecue", 1, 10, 9, "barbecue", 0, 1);
+            Produit grande_deluxe = new Produit(13, "GrandeDeluxePotatoes", 1, 40, (float) 0.5, "grande_deluxe", 0, 1);
+            Produit grande_frite = new Produit(14, "GrandeFrite", 1, 55, (float) 0.5, "grande_frite", 0, 1);
+            Produit ketchup = new Produit(15, "Ketchup", 1, (float)2.9,(float) 2.4, "ketchup", 0, 1);
+            Produit moutarde = new Produit(16, "Moutarde", 1, 7,(float) 5.3, "moutarde", 0, 1);
+            Produit moy_deluxe = new Produit(17, "MoyennePotatoes", 1, 28,(float) 0.3, "moy_deluxe", 0, 1);
+            Produit moy_frite = new Produit(18, "MoyenneFrite", 1, 42,(float) 0.4, "moy_frite", 0, 1);
+            Produit sauce_chinoise = new Produit(19, "SauceChinoise", 1, 12, 11, "sauce_chinoise", 0, 1);
+            Produit sauce_curry = new Produit(20, "SauceCurry", 1, 11, 10, "sauce_curry", 0, 1);
+            Produit sauce_deluxe = new Produit(21, "SauceDeluxe", 1,(float) 0.8,(float) 0.9, "sauce_deluxe", 0, 1);
 
 
             /*--------------------------- mcdo_boissons ----------------------------------------------------------------------------*/
 
-            Produit mcdo_coca = new Produit(22, "CocaCola", 2, 27, 27, "mcdo_coca", 0, 1);
-            Produit mcdo_cocalight = new Produit(23, "CocaColaLight", 2, 27, 27, "mcdo_cocalight", 0, 1);
-            Produit mcdo_cocazero = new Produit(24, "CocaColaZero", 2, 27, 27, "mcdo_cocazero", 0, 1);
-            Produit mcdo_evian = new Produit(25, "Evian", 2, 27, 27, "mcdo_evian", 0, 1);
+            Produit mcdo_coca = new Produit(22, "CocaCola", 2, 17, 17, "mcdo_coca", 0, 1);
+            Produit mcdo_cocalight = new Produit(23, "CocaColaLight", 2, 17, 17, "mcdo_cocalight", 0, 1);
+            Produit mcdo_cocazero = new Produit(24, "CocaColaZero", 2, 17, 17, "mcdo_cocazero", 0, 1);
+            Produit mcdo_evian = new Produit(25, "Evian", 2, 0, 0, "mcdo_evian", 0, 1);
             Produit mcdo_fanta = new Produit(26, "Fanta", 2, 17, 17, "mcdo_fanta", 0, 1);
             Produit mcdo_icetea = new Produit(27, "IceTea", 2, 17, 17, "mcdo_icetea", 0, 1);
             Produit mcdo_sprite = new Produit(28, "Sprite", 2, 17, 17, "mcdo_sprite", 0, 1);
-            Produit mcdo_spritezero = new Produit(29, "SpriteZero", 2, 27, 27, "mcdo_spritezero", 0, 1);
+            Produit mcdo_spritezero = new Produit(29, "SpriteZero", 2, 17, 17, "mcdo_spritezero", 0, 1);
 
 
             /*--------------------------- mcdo_desserts ----------------------------------------------------------------------------*/
@@ -184,7 +181,7 @@ public class Produits extends AppCompatActivity {
             Produit kfc_coca = new Produit(44, "CocaCola", 6, 27, 27, "mcdo_coca", 0, 2);
             Produit kfc_cocalight = new Produit(45, "CocaColaLight", 6, 27, 27, "mcdo_cocalight", 0, 2);
             Produit kfc_cocazero = new Produit(46, "CocaColaZero", 6, 27, 27, "mcdo_cocazero", 0, 2);
-            Produit kfc_evian = new Produit(47, "Evian", 6, 27, 27, "mcdo_evian", 0, 2);
+            Produit kfc_evian = new Produit(47, "Evian", 6, 0, 0, "mcdo_evian", 0, 2);
             Produit kfc_fanta = new Produit(48, "Fanta", 6, 17, 17, "mcdo_fanta", 0, 2);
             Produit kfc_icetea = new Produit(49, "IceTea", 6, 17, 17, "mcdo_icetea", 0, 2);
             Produit kfc_sprite = new Produit(50, "Sprite", 6, 17, 17, "mcdo_sprite", 0, 2);
@@ -198,11 +195,8 @@ public class Produits extends AppCompatActivity {
             /*-----------------------------DAO McDo --------------------------------------------------------------------------------*/
             produitDAO.ajouter(bigMac);
             produitDAO.ajouter(royalBacon);
-            produitDAO.ajouter(royalCheese);
             produitDAO.ajouter(royalDeluxe);
             produitDAO.ajouter(tripleCheese);
-            produitDAO.ajouter(premium);
-            produitDAO.ajouter(mcwrapPoulet);
             produitDAO.ajouter(mcFirstb);
             produitDAO.ajouter(mcFirstp);
             produitDAO.ajouter(mcwrapChevre);

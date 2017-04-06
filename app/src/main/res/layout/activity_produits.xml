@@ -132,7 +132,7 @@
             android:layout_width="match_parent"
             android:background="#FEFEFE"
             android:layout_height="match_parent"
-            android:columnWidth="150dp"
+            android:columnWidth="170dp"
             android:numColumns="auto_fit"
             android:verticalSpacing="10dp"
             android:horizontalSpacing="10dp"
