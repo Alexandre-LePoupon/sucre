@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/textSucres"
-                android:background="#ddf"
+                android:background="#FEFEFE"
                 android:padding="10dp">
 
                 <LinearLayout
@@ -99,7 +99,7 @@
                 app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp"
                 android:id="@+id/button_view_data"
                 android:layout_weight="1"
-                android:background="#aaf"
+                android:background="#C4C4C4"
                 android:onClick="changeViewData"
                 android:layout_height="30dp" />
 
@@ -181,6 +181,7 @@
         <GridView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/gridview"
             android:layout_width="match_parent"
+            android:background="#FEFEFE"
             android:layout_height="match_parent"
             android:columnWidth="150dp"
             android:numColumns="auto_fit"
