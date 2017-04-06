@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -261,6 +262,28 @@ public class Produits extends AppCompatActivity {
     public void setSucresValues() {
         sucresLents.setText(valueActuelL + " / " + protocolDAO.selectionner(1).getLent() + "g");
         sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
+
+        if (valueActuelL >= protocolDAO.selectionner(1).getLent()){
+            ImageView img1 = (ImageView)findViewById(R.id.img1);
+
+            img1.setVisibility(View.VISIBLE);
+        }
+        else {
+            ImageView img1 = (ImageView)findViewById(R.id.img1);
+
+            img1.setVisibility(View.INVISIBLE);
+        }
+
+        if (valueActuelR >= protocolDAO.selectionner(1).getRapide()){
+            ImageView img2 = (ImageView)findViewById(R.id.img2);
+
+            img2.setVisibility(View.VISIBLE);
+        }
+        else {
+            ImageView img2 = (ImageView)findViewById(R.id.img2);
+
+            img2.setVisibility(View.INVISIBLE);
+        }
     }
 
     private void addSucresRapides(float value) {

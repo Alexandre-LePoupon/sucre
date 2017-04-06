@@ -26,40 +26,70 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal" >
+                    android:orientation="vertical" >
 
-                    <TextView
-                        android:text="Sucres lents : "
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView6"
-                        android:layout_weight="1"
-                        android:textSize="12sp" />
+                    <LinearLayout
+                        android:layout_width="231dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:text="1.5g"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/sucresLentsData"
-                        android:layout_weight="1"
-                        android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sucres rapides :"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:text="Sucres rapides :"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/sucresRapidesData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="2.1g"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:text="2.1g"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/sucresRapidesData"
-                        android:layout_weight="1"
-                        android:textSize="12sp" />
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:layout_weight="1"
+                            android:paddingBottom="6px"
+                            android:paddingLeft="5px"
+                            android:visibility="visible"
+                            app:srcCompat="?android:attr/alertDialogIcon" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sucres lents : "
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/sucresLentsData"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1.5g"
+                            android:textSize="12sp" />
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:layout_weight="1"
+                            android:paddingBottom="6px"
+                            android:paddingLeft="5px"
+                            app:srcCompat="?android:attr/alertDialogIcon" />
+                    </LinearLayout>
 
                 </LinearLayout>
             </HorizontalScrollView>
