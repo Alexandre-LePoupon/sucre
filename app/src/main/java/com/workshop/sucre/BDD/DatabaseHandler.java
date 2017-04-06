@@ -69,7 +69,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     PRODUIT_GLUCIDE + " REAL, " +
                     PRODUIT_SUCRE + " REAL, " +
                     PRODUIT_QUANTITE + " REAL, " +
-                    PRODUIT_FASTFOOD + " INTEGER " +
+                    PRODUIT_FASTFOOD + " INTEGER, " +
                     PRODUIT_IMG + " TEXT);";
 
     public static final String PRODUIT_TABLE_DROP = "DROP TABLE IF EXISTS " + PRODUIT_TABLE_NAME + ";";

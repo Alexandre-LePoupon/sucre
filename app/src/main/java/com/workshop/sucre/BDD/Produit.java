@@ -11,7 +11,7 @@ public class Produit {
     private float glucide;
     private float sucre;
     private float quantite;
-    private float fastfood;
+    private int fastfood;
     private String img;
 
     public Produit(long id, String nom, int categorie, float glucide, float sucre, String img, float quantite, int fastfood) {
@@ -77,11 +77,11 @@ public class Produit {
 
     public void setQuantite(float q){this.quantite=q;}
 
-    public float getFastfood() {
+    public int getFastfood() {
         return fastfood;
     }
 
-    public void setFastfood(float fastfood) {
+    public void setFastfood(int fastfood) {
         this.fastfood = fastfood;
     }
 }

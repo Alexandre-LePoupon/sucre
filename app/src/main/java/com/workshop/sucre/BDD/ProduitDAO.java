@@ -27,7 +27,7 @@ public class ProduitDAO extends DAOBase{
                     GLUCIDE + " REAL, " +
                     SUCRE + " REAL, " +
                     IMG + "TEXT," +
-                    QUANTITE + " REAL" +
+                    QUANTITE + " REAL," +
                     FASTFOOD + "INTEGER);";
 
     public static final String TABLE_DROP = "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
