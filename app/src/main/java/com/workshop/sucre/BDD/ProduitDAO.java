@@ -81,7 +81,7 @@ public class ProduitDAO extends DAOBase{
     }
 
     /**
-     * @param id l'identifiant du protocole à récupérer
+     * @param id l'identifiant des produits à récupérer
      */
     public Produit selectionner(long id) {
         String nom="";
@@ -102,6 +102,34 @@ public class ProduitDAO extends DAOBase{
 
         Produit p;
         if(nom == "" && categorie ==0 && glucide == 0 && sucre == 0 && img == "" && quantite == 0) {
+            p=null;
+        } else {
+            p = new Produit(id, nom, categorie, glucide, sucre, img, quantite);
+        }
+        c.close();
+        return p;
+    }
+
+    /**
+     * @param categorie la catégorie des produits à récupérer
+     */
+    public Produit selectionnerCategorie(long id, int categorie) {
+        String nom="";
+        float glucide=0;
+        float sucre=0;
+        float quantite=0;
+        String img="";
+        Cursor c = mDb.rawQuery("select " + NOM + "," + GLUCIDE + "," + SUCRE + "," + IMG + "," + QUANTITE + " from " + TABLE_NAME + " where id = ? and categorie = ?", new String[] {String.valueOf(id),String.valueOf(categorie)});
+        while (c.moveToNext()) {
+            nom = c.getString(0);
+            glucide = c.getFloat(1);
+            sucre = c.getFloat(2);
+            img = c.getString(3);
+            quantite = c.getFloat(4);
+        }
+
+        Produit p;
+        if(nom == "" && glucide == 0 && sucre == 0 && img == "" && quantite == 0) {
             p=null;
         } else {
             p = new Produit(id, nom, categorie, glucide, sucre, img, quantite);

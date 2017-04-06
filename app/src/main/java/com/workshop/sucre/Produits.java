@@ -16,10 +16,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.workshop.sucre.BDD.Categorie;
 import com.workshop.sucre.BDD.CategorieDAO;
 import com.workshop.sucre.BDD.Produit;
@@ -135,12 +131,14 @@ public class Produits extends AppCompatActivity {
 
         }
 
+        gridview = (GridView) findViewById(R.id.gridview);
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
 
         /**
          * initialisation de la grid view + ajout de l'adaptateur +++ list view
          */
         gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this, produitDAO));
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
 
         listView = (ListView) findViewById(R.id.listViewData);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, android.R.id.text1, al);
@@ -157,7 +155,7 @@ public class Produits extends AppCompatActivity {
                  * ajout du produit a la list. Si il y est déja -> + 1
                  *
                  */
-                Produit temp = ((ImageAdapter) gridview.getAdapter()).getProduct((int) position);
+                Produit temp = ((ImageAdapter) gridview.getAdapter()).getProduct(position);
 
                 for (int j = 0; j < produitDAO.getSize(); j++) {
                     if (produitDAO.selectionner(j + 1).getNom().compareTo(temp.getNom()) == 0) {

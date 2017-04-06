@@ -22,6 +22,7 @@ public abstract class DAOBase {
     public SQLiteDatabase open() {
 
         mDb = mHandler.getWritableDatabase();
+        //decommenter la ligne suivante, lancer appli puis recommenter pour reset la bdd
         //mHandler.onUpgrade(mDb,1,2);
         return mDb;
     }

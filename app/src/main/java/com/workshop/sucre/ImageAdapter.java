@@ -1,7 +1,6 @@
 package com.workshop.sucre;
 
 import android.content.Context;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -21,25 +20,25 @@ import java.util.List;
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private List<Produit> listProd = new ArrayList<Produit>();
-    private int id = 0;
     private Integer[] mThumbIds;
 
-    public ImageAdapter(Context c, ProduitDAO produitDAO) {
+    public ImageAdapter(Context c, ProduitDAO produitDAO, int categorie) {
         mContext = c;
-        //TODO : Ajouter filtre categorie, fastfood
+
         for(int i = 1; i<=produitDAO.getSize(); i++) {
-            listProd.add(produitDAO.selectionner(i));
+            Produit tmp = produitDAO.selectionnerCategorie(i,categorie);
+            if (tmp != null) {
+                listProd.add(tmp);
+            }
         }
-        //TODO : Recuperation id
+
         mThumbIds = new Integer[listProd.size()];
-        for(int j=0;j<listProd.size();j++)
-        {
-            mThumbIds[j]=mContext.getResources().getIdentifier(listProd.get(j).getImg(),  "drawable", mContext.getPackageName());
+        for(int j = 0; j<listProd.size(); j++) {
+            mThumbIds[j] = mContext.getResources().getIdentifier(listProd.get(j).getImg(),  "drawable", mContext.getPackageName());
         }
     }
 
-    public Produit getProduct(int id)
-    {
+    public Produit getProduct(int id) {
         return listProd.get(id);
     }
 
@@ -61,9 +60,8 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
-
             imageView.setPadding(0,0,0,0);
         } else {
             imageView = (ImageView) convertView;
