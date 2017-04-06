@@ -26,6 +26,7 @@ import com.workshop.sucre.BDD.Categorie;
 import com.workshop.sucre.BDD.CategorieDAO;
 import com.workshop.sucre.BDD.Produit;
 import com.workshop.sucre.BDD.ProduitDAO;
+import com.workshop.sucre.BDD.Protocole;
 import com.workshop.sucre.BDD.ProtocoleDAO;
 
 import java.util.ArrayList;
@@ -456,9 +457,19 @@ public class Produits extends AppCompatActivity {
         sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Vous avez dépassé les quantités de sucres?");
-        builder.setTitle("Vous avez dépassé les quantités de sucres?");
-        builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+        builder.setTitle("Vous avez dépassé les quantités du protocol!");
+        builder.setMessage("Voulez vous ajuster le protocol?");
+
+        builder.setPositiveButton("Oui",new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Protocole p=protocolDAO.selectionner(1);
+                p.setLent(valueActuelL);
+                p.setRapide(valueActuelR);
+                protocolDAO.modifier(p);
+                setSucresValues();
+            }
+        });
+        builder.setNegativeButton("Non",new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
             }
         });
@@ -480,7 +491,7 @@ public class Produits extends AppCompatActivity {
 
             img2.setVisibility(View.INVISIBLE);
         }
-        if(valueActuelR >= protocolDAO.selectionner(1).getRapide() || valueActuelL >= protocolDAO.selectionner(1).getLent())
+        if(valueActuelR > protocolDAO.selectionner(1).getRapide() || valueActuelL > protocolDAO.selectionner(1).getLent())
         {
             AlertDialog dialog = builder.create();
             dialog.show();
