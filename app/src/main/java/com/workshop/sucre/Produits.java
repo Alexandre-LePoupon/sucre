@@ -66,7 +66,20 @@ public class Produits extends AppCompatActivity{
             Produit mcFlurry = new Produit(12, "McFlurry", 4, 50, 50, "mcdo_mcflurry",0);
             Produit mcwrapChevre = new Produit(13, "McwrapChevre", 1, 58, 4, "mcdo_mcwrap_chevre",0);
 
+            //passage à kfc
 
+            Produit boxMaster = new Produit(14, "BoxMaster", 5, 59, 1, "kfc_boxmaster",0);
+            Produit brazer = new Produit(15, "Brazer", 5, 37, 7, "kfc_brazer",0);
+            Produit doubleSweatFire = new Produit(16, "DoubleSweatFire", 5, (float) 51.6, 0, "kfc_double_sweatandfire",0);
+            Produit kfcFrite = new Produit(17, "KfcFrite", 6, 35, 1, "kfc_frites",0);
+            Produit kreamBall = new Produit(18, "KreamBall", 7, 50, 50, "kfc_ kreamball",0);
+            Produit mixBucket = new Produit(19, "MixBucket", 5, (float) 22.5, 0, "kfc_mixbucket",0);
+            Produit saladeBrazer = new Produit(20, "SaladeBrazer", 8, (float) 5.5, 0, "kfc_salde_brazer",0);
+            Produit saladeCrispy = new Produit(21, "SaladeCrispy", 8, (float) 8.9, 0, "kfc_salade_crispy",0);
+            Produit tenders = new Produit(22, "Tenders", 5, 26, (float) 0.1, "kfc_tenders",0);
+            Produit theBoss = new Produit(23, "TheBoss", 5, (float) 41.7, 0, "kfc_theboss",0);
+
+            //DAO mcdo
             produitDAO.ajouter(bigMac);
             produitDAO.ajouter(royalBacon);
             produitDAO.ajouter(royalCheese);
@@ -80,7 +93,24 @@ public class Produits extends AppCompatActivity{
             produitDAO.ajouter(mcFirstp);
             produitDAO.ajouter(mcFlurry);
             produitDAO.ajouter(mcwrapChevre);
+
+            // DAO kfc
+            produitDAO.ajouter(boxMaster);
+            produitDAO.ajouter(brazer);
+            produitDAO.ajouter(doubleSweatFire);
+            produitDAO.ajouter(kfcFrite);
+            produitDAO.ajouter(kreamBall);
+            produitDAO.ajouter(mixBucket);
+            produitDAO.ajouter(saladeBrazer);
+            produitDAO.ajouter(saladeCrispy);
+            produitDAO.ajouter(tenders);
+            produitDAO.ajouter(theBoss);
+
         }
+
+
+
+
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this, produitDAO));
