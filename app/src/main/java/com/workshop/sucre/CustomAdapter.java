@@ -27,29 +27,36 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Context mContext;
     private GridView gridview;
     private ProduitDAO pDao;
+    private int fastfood;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageViewIcon;
 
-        public MyViewHolder(View itemView, final GridView grid, final ProduitDAO pDao, final Context context) {
+        public MyViewHolder(View itemView, final GridView grid, final ProduitDAO pDao, final Context context, final int fastfood) {
             super(itemView);
 
             this.imageViewIcon = (ImageView) itemView.findViewById(R.id.image);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    grid.setAdapter(new ImageAdapter(context, pDao, getPosition()));
+                    if(fastfood==1) {
+                        grid.setAdapter(new ImageAdapter(context, pDao, getPosition()));
+                    } else {
+                        grid.setAdapter(new ImageAdapter(context, pDao, getPosition()+4));
+                    }
+
                 }
             });
         }
     }
 
-    public CustomAdapter(List<Categorie> data, Context context, GridView gridView, ProduitDAO pDao) {
+    public CustomAdapter(List<Categorie> data, Context context, GridView gridView, ProduitDAO pDao, int fastfood) {
         this.dataSet = data;
         this.mContext = context;
         this.gridview = gridView;
         this.pDao = pDao;
+        this.fastfood = fastfood;
     }
 
     @Override
@@ -60,7 +67,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
         //view.setOnClickListener(MainActivity.myOnClickListener);
 
-        MyViewHolder myViewHolder = new MyViewHolder(view, gridview, pDao, mContext);
+        MyViewHolder myViewHolder = new MyViewHolder(view, gridview, pDao, mContext, fastfood);
         return myViewHolder;
     }
 

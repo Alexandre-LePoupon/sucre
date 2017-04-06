@@ -163,7 +163,7 @@ public class Produits extends AppCompatActivity {
             Produit brazer = new Produit(36, "Brazer", 4, 37, 7, "kfc_brazer", 0, 2);
             Produit doubleSweatFire = new Produit(37, "DoubleSweatFire", 4, (float) 51.6, 0, "kfc_double_sweatandfire", 0, 2);
             Produit mixBucket = new Produit(38, "MixBucket", 4, (float) 22.5, 0, "kfc_mixbucket", 0, 2);
-            Produit saladeBrazer = new Produit(39, "SaladeBrazer", 4, (float) 5.5, 0, "kfc_salde_brazer", 0, 2);
+            Produit saladeBrazer = new Produit(39, "SaladeBrazer", 4, (float) 5.5, 0, "kfc_salade_brazer", 0, 2);
             Produit saladeCrispy = new Produit(40, "SaladeCrispy", 4, (float) 8.9, 0, "kfc_salade_crispy", 0, 2);
             Produit tenders = new Produit(41, "Tenders", 4, 26, (float) 0.1, "kfc_tenders", 0, 2);
             Produit theBoss = new Produit(42, "TheBoss", 4, (float) 41.7, 0, "kfc_theboss", 0, 2);
@@ -185,7 +185,7 @@ public class Produits extends AppCompatActivity {
 
             /*--------------------------- kfc_desserts -----------------------------------------------------------------------------*/
 
-            Produit kreamBall = new Produit(61, "KreamBall", 7, 50, 50, "kfc_ kreamball", 0, 2);
+            Produit kreamBall = new Produit(61, "KreamBall", 7, 50, 50, "kfc_kreamball", 0, 2);
 
 
             /*-----------------------------DAO McDo --------------------------------------------------------------------------------*/
@@ -252,24 +252,34 @@ public class Produits extends AppCompatActivity {
         //View categorie
         horizontal_recycler_view= (RecyclerView) findViewById(R.id.listcategorie);
         horizontalList = new ArrayList<Categorie>();
-        for (int i = 1; i < 5; i++) {
-            horizontalList.add(categorieDAO.selectionner(i));
+
+        if(fastfood==1) {
+            for (int i = 1; i < 5; i++) {
+                horizontalList.add(categorieDAO.selectionner(i));
+            }
+        } else {
+            for (int i = 5; i < 9; i++) {
+                horizontalList.add(categorieDAO.selectionner(i));
+            }
         }
-        horizontalAdapter=new CustomAdapter(horizontalList,Produits.this, gridview, produitDAO);
+
+        horizontalAdapter=new CustomAdapter(horizontalList,Produits.this, gridview, produitDAO, fastfood);
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(Produits.this, LinearLayoutManager.HORIZONTAL, false);
         horizontal_recycler_view.setLayoutManager(horizontalLayoutManager);
         horizontal_recycler_view.setAdapter(horizontalAdapter);
 
+        if(fastfood == 1) {
+            gridview.setAdapter(new ImageAdapter(this, produitDAO, 0));
+        } else {
+            gridview.setAdapter(new ImageAdapter(this, produitDAO, 4));
+        }
 
 
-        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
 
         /**
          * initialisation de la grid view + ajout de l'adaptateur +++ list view
          */
-        gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
 
         listView = (ListView) findViewById(R.id.listViewData);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, android.R.id.text1, al);
