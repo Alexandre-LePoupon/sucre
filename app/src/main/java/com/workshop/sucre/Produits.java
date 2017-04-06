@@ -1,16 +1,13 @@
 package com.workshop.sucre;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
-import android.widget.HorizontalScrollView;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -287,5 +284,22 @@ public class Produits extends AppCompatActivity {
         }
         setSucresValues();
         adapter.add("Reset");
+    }
+
+
+    public void onClicBoutonCategorie1 (View view){
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
+    }
+
+    public void onClicBoutonCategorie2(View view) {
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 2));
+    }
+
+    public void onClicBoutonCategorie3(View view) {
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 3));
+    }
+
+    public void onClicBoutonCategorie4(View view) {
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 4));
     }
 }
