@@ -456,14 +456,18 @@ public class Produits extends AppCompatActivity {
         sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Vous avez dépassé les quantités du protocol!");
-        builder.setMessage("Voulez vous ajuster le protocol?");
+        builder.setTitle("Vous avez dépassé les quantités du protocole!");
+        builder.setMessage("Voulez vous ajuster le protocole?");
 
         builder.setPositiveButton("Oui",new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 Protocole p=protocolDAO.selectionner(1);
-                p.setLent(valueActuelL);
-                p.setRapide(valueActuelR);
+                int value=(int) (valueActuelL-p.getLent());
+                if(valueActuelR-p.getRapide()>value)
+                    value=(int)(valueActuelR-p.getRapide());
+
+                p.setLent(p.getLent()+value);
+                p.setRapide(p.getRapide()+value);
                 protocolDAO.modifier(p);
                 setSucresValues();
             }
