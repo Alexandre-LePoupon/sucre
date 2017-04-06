@@ -23,7 +23,7 @@ public abstract class DAOBase {
 
         mDb = mHandler.getWritableDatabase();
         //decommenter la ligne suivante, lancer appli puis recommenter pour reset la bdd
-        //mHandler.onUpgrade(mDb,1,2);.
+        //mHandler.onUpgrade(mDb,1,2);
         return mDb;
     }
 

@@ -1,5 +1,9 @@
 package com.workshop.sucre;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,12 +11,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,7 +61,7 @@ public class Produits extends AppCompatActivity {
      * 7
      * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! id a incrément pour les catégories
      *******************************************************************/
-    int categorieId = 0;
+    int fastfood;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +69,7 @@ public class Produits extends AppCompatActivity {
         setContentView(R.layout.activity_produits);
 
         Bundle b = getIntent().getExtras();
-        int fastfood = b.getInt("fastfood");
+        fastfood = b.getInt("fastfood");
 
         /**
          * ouverture des tables
@@ -301,8 +307,8 @@ public class Produits extends AppCompatActivity {
 
                 for (int j = 0; j < produitDAO.getSize(); j++) {
                     if (produitDAO.selectionner(j + 1).getNom().compareTo(temp1.getNom()) == 0) {
-                        Produit temp =produitDAO.selectionner(j+1);
-                        if (temp.getQuantite() == 0) {
+                        Produit temp = produitDAO.selectionner(j + 1);
+                        if (temp.getQuantite() == 0 && temp.getFastfood()==fastfood) {
                             Toast.makeText(Produits.this, temp.getNom() + " ajouté.",
                                     Toast.LENGTH_SHORT).show();
                         } else {
@@ -331,25 +337,73 @@ public class Produits extends AppCompatActivity {
                 String itemValue = (String) listView.getItemAtPosition(position);
                 itemValue = itemValue.split(" ")[0];  // récupération de nom uniquement
                 int j;
-                if(itemValue.compareTo("Reset")==0)
-                {
-                    for(j=0;j<produitDAO.getSize();j++)
-                    {
-                        Produit temp = produitDAO.selectionner(j + 1);
-                        temp.setQuantite(0);
-                        produitDAO.modifier(temp);
-                    }
-                    actualiseProduitToList();
-                }
-                else
-                    for (j = 0; j < produitDAO.getSize(); j++) {
-                        Produit temp = produitDAO.selectionner(j + 1);
-                        if (itemValue.compareTo(temp.getNom()) == 0) {
-                            temp.setQuantite(temp.getQuantite() + 1);
-                            produitDAO.modifier(temp);
+                if (itemValue.compareTo("Reset") == 0 && position != 0) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Supprimer la list?");
+                    builder.setTitle("Réinitialisation de la liste");
+                    builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            for (int j = 0; j < produitDAO.getSize(); j++)
+                            {
+                                if(fastfood==produitDAO.selectionner(j+1).getFastfood())
+                                {
+                                    Produit temp = produitDAO.selectionner(j + 1);
+                                    temp.setQuantite(0);
+                                    produitDAO.modifier(temp);
+                                }
+                            }
                             actualiseProduitToList();
                         }
+                    });
+                    builder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // User cancelled the dialog
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                } else {
+                    for (j = 0; j < produitDAO.getSize(); j++) {
+                        Produit temp = produitDAO.selectionner(j + 1);
+                        if (itemValue.compareTo(temp.getNom()) == 0 && temp.getFastfood()==fastfood) {
+                            final Dialog dialog = new Dialog(getActivity());
+                            dialog.setContentView(R.layout.dialog_quantite);
+                            dialog.setTitle("Modifier les quantitées");
+
+                            // set the custom dialog components - text, image and button
+                            Button banul = (Button) dialog.findViewById(R.id.dialog_annuler);
+                            Button bmodif = (Button) dialog.findViewById(R.id.dialog_modifier);
+                            SeekBar sb = (SeekBar) dialog.findViewById(R.id.seekBar);
+                            ((TextView) dialog.findViewById(R.id.textChangeQuantite)).setText(" X "+temp.getQuantite());
+
+                            banul.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            bmodif.setOnClickListener(new SelecteurQuantiteValideClicListener(temp,produitDAO,dialog,getThis(),sb));
+
+
+                            sb.setProgress((int)(temp.getQuantite()*4));
+
+                            sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                                @Override
+                                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                                    TextView tv= (TextView) dialog.findViewById(R.id.textChangeQuantite);
+                                    tv.setText("X "+((float)progress)/4);
+                                }
+                                public void onStartTrackingTouch(SeekBar seekBar) {
+                                }
+                                public void onStopTrackingTouch(SeekBar seekBar) {
+                                }
+                            });
+                            dialog.show();
+
+
+                        }
                     }
+                }
             }
         });
 
@@ -371,7 +425,6 @@ public class Produits extends AppCompatActivity {
         changeSucres(0, 0);
         actualiseProduitToList();
     }
-
 
 
     /**
@@ -399,27 +452,33 @@ public class Produits extends AppCompatActivity {
         sucresLents.setText(valueActuelL + " / " + protocolDAO.selectionner(1).getLent() + "g");
         sucresRapides.setText(valueActuelR + " / " + protocolDAO.selectionner(1).getRapide() + "g");
 
-        if (valueActuelL >= protocolDAO.selectionner(1).getLent()){
-            ImageView img1 = (ImageView)findViewById(R.id.img1);
+        if (valueActuelL >= protocolDAO.selectionner(1).getLent()) {
+            ImageView img1 = (ImageView) findViewById(R.id.img1);
 
             img1.setVisibility(View.VISIBLE);
-        }
-        else {
-            ImageView img1 = (ImageView)findViewById(R.id.img1);
+        } else {
+            ImageView img1 = (ImageView) findViewById(R.id.img1);
 
             img1.setVisibility(View.INVISIBLE);
         }
 
-        if (valueActuelR >= protocolDAO.selectionner(1).getRapide()){
-            ImageView img2 = (ImageView)findViewById(R.id.img2);
+        if (valueActuelR >= protocolDAO.selectionner(1).getRapide()) {
+            ImageView img2 = (ImageView) findViewById(R.id.img2);
 
             img2.setVisibility(View.VISIBLE);
-        }
-        else {
-            ImageView img2 = (ImageView)findViewById(R.id.img2);
+        } else {
+            ImageView img2 = (ImageView) findViewById(R.id.img2);
 
             img2.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public Activity getActivity() {
+        return this;
+    }
+    public Produits getThis()
+    {
+        return  this;
     }
 
     private void addSucresRapides(float value) {
@@ -444,7 +503,7 @@ public class Produits extends AppCompatActivity {
 
         for (j = 1; j <= produitDAO.getSize(); j++) {
             Produit temp = produitDAO.selectionner(j);
-            if (temp.getQuantite() > 0) {
+            if (temp.getQuantite() > 0&& temp.getFastfood()==fastfood) {
                 adapter.add(temp.getNom() + " X" + temp.getQuantite());
                 valueActuelR += (temp.getSucre() * temp.getQuantite());
                 valueActuelL += ((temp.getGlucide() - temp.getSucre()) * temp.getQuantite());
@@ -452,5 +511,22 @@ public class Produits extends AppCompatActivity {
         }
         setSucresValues();
         adapter.add("Reset");
+    }
+
+
+    public void onClicBoutonCategorie1 (View view){
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 1));
+    }
+
+    public void onClicBoutonCategorie2(View view) {
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 2));
+    }
+
+    public void onClicBoutonCategorie3(View view) {
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 3));
+    }
+
+    public void onClicBoutonCategorie4(View view) {
+        gridview.setAdapter(new ImageAdapter(this, produitDAO, 4));
     }
 }
