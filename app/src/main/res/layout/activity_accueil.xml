@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,128 +11,51 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.workshop.sucre.MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-
-        <LinearLayout
+        <RelativeLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/accueil">
 
-            <TextView
-                android:text="Bienvenu sur l'application"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/messageBienvenu"
-                android:textAlignment="center"
-                tools:text="Bienvenu sur l'application"
-                android:textColor="#000" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="false"
-                android:id="@+id/titre"
-                android:text="FRIT'LY"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textSize="34sp"
-                android:textStyle="normal|bold"
-                android:textAlignment="center"
-                android:textColor="#000" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:background="#AAA"
-                tools:padding="5dp"
-                tools:layout_marginTop="10dp">
-
-                <TextView
-                    android:text="Définisez votre protocole :"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/messageChoixProtocol"
-                    android:textAlignment="center"
+                <EditText
+                    android:layout_height="20dp"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/inputSucresLents"
                     android:textColor="#000"
-                    tools:paddingBottom="10dp"
-                    android:textStyle="normal|bold"
-                    android:textSize="18sp" />
+                    android:layout_width="70dp"
+                    android:textAlignment="center"
+                    android:background="#e4e566"
+                    android:layout_marginTop="164dp"
+                    android:layout_marginLeft="178dp"/>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="5dp">
-
-                    <TextView
-                        android:text="Votre quantité de sucres lents voulus :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/surcresLentes"
-                        android:fontFamily="sans-serif"
-                        android:textSize="14sp"
-                        android:textColor="#000"
-                        android:textAlignment="center"
-                        tools:paddingBottom="5dp"
-                        android:layout_weight="1" />
-
-                    <EditText
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:ems="10"
-                        android:id="@+id/inputSucresLents"
-                        android:background="#DDF"
-                        android:textColor="#000"
-                        android:layout_width="130dp"
-                        android:textAlignment="center"
-                        android:layout_weight="1" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginBottom="15dp">
-
-                    <TextView
-                        android:text="Votre quantité de sucres rapides voulus :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/sucresRapide"
-                        android:textSize="14sp"
-                        android:textColor="#000"
-                        android:textAlignment="center"
-                        android:layout_weight="1" />
-
-                    <EditText
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:ems="10"
-                        android:id="@+id/inputSucresRapides"
-                        android:textColor="#000"
-                        android:background="#DDF"
-                        android:textAlignment="center"
-                        android:layout_weight="1" />
-                </LinearLayout>
+                <EditText
+                    android:layout_height="20dp"
+                    android:inputType="numberDecimal"
+                    android:ems="10"
+                    android:id="@+id/inputSucresRapides"
+                    android:textColor="#000"
+                    android:background="#e4e566"
+                    android:layout_width="70dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="222dp"
+                    android:layout_marginLeft="178dp"/>
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:onClick="accueil"
+                    android:layout_marginTop="275dp"
+                    android:layout_marginLeft="240dp"
                     android:text="Valider" />
-            </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
