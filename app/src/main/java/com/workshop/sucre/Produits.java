@@ -66,9 +66,16 @@ public class Produits extends AppCompatActivity {
          * ajout des catégories dans la base de données
          */
         if (categorieDAO.selectionner(1) == null) {
-            Categorie burger = new Categorie(1, "Burger", 1, "mcdo_nos_sandwichs");
 
-            categorieDAO.ajouter(burger);
+            Categorie sandwichs = new Categorie(1, "Sandwichs", 1, "mcdo_nos_sandwichs");
+            Categorie boissons = new Categorie(2, "Boissons", 1, "mcdo_nos_boissons");
+            Categorie frites = new Categorie(3, "Frites", 1, "mcdo_frites");
+            Categorie desserts = new Categorie(4, "Desserts", 1, "mcdo_nos_desserts");
+
+            categorieDAO.ajouter(sandwichs);
+            categorieDAO.ajouter(boissons);
+            categorieDAO.ajouter(frites);
+            categorieDAO.ajouter(desserts);
         }
 
         if (produitDAO.selectionner(1) == null) {
