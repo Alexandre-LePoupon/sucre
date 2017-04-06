@@ -190,14 +190,25 @@ public class Produits extends AppCompatActivity {
                 String itemValue = (String) listView.getItemAtPosition(position);
                 itemValue = itemValue.split(" ")[0];  // récupération de nom uniquement
                 int j;
-                for (j = 0; j < produitDAO.getSize(); j++) {
-                    Produit temp = produitDAO.selectionner(j + 1);
-                    if (itemValue.compareTo(temp.getNom()) == 0) {
-                        temp.setQuantite(temp.getQuantite() + 1);
+                if(itemValue.compareTo("Reset")==0)
+                {
+                    for(j=0;j<produitDAO.getSize();j++)
+                    {
+                        Produit temp = produitDAO.selectionner(j + 1);
+                        temp.setQuantite(0);
                         produitDAO.modifier(temp);
-                        actualiseProduitToList();
                     }
+                    actualiseProduitToList();
                 }
+                else
+                    for (j = 0; j < produitDAO.getSize(); j++) {
+                        Produit temp = produitDAO.selectionner(j + 1);
+                        if (itemValue.compareTo(temp.getNom()) == 0) {
+                            temp.setQuantite(temp.getQuantite() + 1);
+                            produitDAO.modifier(temp);
+                            actualiseProduitToList();
+                        }
+                    }
             }
         });
 
@@ -219,6 +230,7 @@ public class Produits extends AppCompatActivity {
         changeSucres(0, 0);
         actualiseProduitToList();
     }
+
 
 
     /**
@@ -273,8 +285,9 @@ public class Produits extends AppCompatActivity {
                 adapter.add(temp.getNom() + " X" + temp.getQuantite());
                 valueActuelR += (temp.getSucre() * temp.getQuantite());
                 valueActuelL += ((temp.getGlucide() - temp.getSucre()) * temp.getQuantite());
-                setSucresValues();
             }
         }
+        setSucresValues();
+        adapter.add("Reset");
     }
 }

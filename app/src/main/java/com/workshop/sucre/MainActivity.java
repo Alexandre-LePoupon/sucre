@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.workshop.sucre.BDD.Produit;
+import com.workshop.sucre.BDD.ProduitDAO;
 import com.workshop.sucre.BDD.Protocole;
 import com.workshop.sucre.BDD.ProtocoleDAO;
 
