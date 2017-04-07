@@ -434,7 +434,9 @@ public class Produits extends AppCompatActivity {
 
             findViewById(R.id.listViewData).getLayoutParams().height =(int) (300.0*((ListView)findViewById(R.id.listViewData)).getResources().getDisplayMetrics().density);
 
-           
+
+            //findViewById(R.id.listViewData).getLayoutParams().height = 1200;
+
         } else {
             button_view_data.setImageResource(ic_keyboard_arrow_down_black_24dp);
             ly.setVisibility(View.GONE);
