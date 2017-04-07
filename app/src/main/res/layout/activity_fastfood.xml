@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="#FEFEFE"
             android:orientation="vertical"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="70dp">
 
             <LinearLayout
                 android:orientation="horizontal"
