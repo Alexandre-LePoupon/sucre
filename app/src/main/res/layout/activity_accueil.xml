@@ -32,10 +32,10 @@
                     android:ems="10"
                     android:id="@+id/inputSucresLents"
                     android:textColor="#000"
-                    android:layout_width="70sp"
+                    android:layout_width="80sp"
                     android:textAlignment="center"
                     android:background="#e4e566"
-                    android:layout_marginTop="176sp"
+                    android:layout_marginTop="172sp"
                     android:layout_marginLeft="197sp"/>
 
                 <EditText
@@ -45,18 +45,18 @@
                     android:id="@+id/inputSucresRapides"
                     android:textColor="#000"
                     android:background="#e4e566"
-                    android:layout_width="70sp"
+                    android:layout_width="80sp"
                     android:textAlignment="center"
-                    android:layout_marginTop="240sp"
+                    android:layout_marginTop="220sp"
                     android:layout_marginLeft="197sp"/>
 
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:onClick="accueil"
-                    android:layout_marginTop="285sp"
+                    android:layout_marginTop="280sp"
                     android:layout_marginLeft="220sp"
-                    android:layout_marginRight="20sp"
+                    android:layout_marginRight="30sp"
                     android:text="Valider" />
 
             </RelativeLayout>
